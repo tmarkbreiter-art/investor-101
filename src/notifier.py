@@ -9,22 +9,24 @@ class Notifier:
     def __init__(self, config):
         self.config = config
 
-    def send(self, subject, html_body, recipients=None):
+    def send(self, subject, html_body):
         cfg = self.config
-        if recipients is None:
-            recipients = cfg.EMAIL_RECEIVERS
+        receivers = [r.strip() for r in cfg.EMAIL_RECEIVERS.split(",") if r.strip()]
+        if not receivers:
+            print("No EMAIL_RECEIVERS configured, skipping email.")
+            return False
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
-        msg["From"]    = cfg.EMAIL_FROM
-        msg["To"]      = ", ".join(recipients)
+        msg["From"]    = cfg.EMAIL_SENDER
+        msg["To"]      = ", ".join(receivers)
         msg.attach(MIMEText(html_body, "html"))
 
         try:
             with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-                server.login(cfg.EMAIL_FROM, cfg.EMAIL_PASSWORD)
-                server.sendmail(cfg.EMAIL_FROM, recipients, msg.as_string())
-            print("Email sent to: " + ", ".join(recipients))
+                server.login(cfg.EMAIL_SENDER, cfg.EMAIL_PASSWORD)
+                server.sendmail(cfg.EMAIL_SENDER, receivers, msg.as_string())
+            print("Email sent to: " + ", ".join(receivers))
             return True
         except Exception as e:
             print("Email failed: " + str(e))
