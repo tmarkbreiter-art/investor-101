@@ -1,13 +1,9 @@
 name: AXIOM US Daily Run
 
 on:
-  on:
-  on:
   schedule:
     - cron: '0 14-22 * * 1-5'
   workflow_dispatch:
-
-           # also lets you trigger it manually anytime
 
 permissions:
   contents: write
