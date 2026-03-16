@@ -1,0 +1,44 @@
+name: AXIOM US Daily Run
+
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'   # 8:00 AM ET = 13:00 UTC, Monday-Friday only
+  workflow_dispatch:           # also lets you trigger it manually anytime
+
+permissions:
+  contents: write
+
+jobs:
+  run-axiom:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests yfinance python-dotenv pytz
+
+      - name: Run AXIOM US
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          GROQ_API_KEY:    ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY:  ${{ secrets.GEMINI_API_KEY }}
+          BUDGET:          ${{ secrets.BUDGET }}
+          EMAIL_SENDER:    ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD:  ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECEIVERS: ${{ secrets.EMAIL_RECEIVERS }}
+          WATCHLIST:       ${{ secrets.WATCHLIST }}
+        run: python run.py
+
+      - name: Commit & push updated dashboard
+        run: |
+          git config user.name  "AXIOM Bot"
+          git config user.email "axiom@users.noreply.github.com"
+          git add docs/index.html
+          git diff --staged --quiet || git commit -m "AXIOM US dashboard - $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
