@@ -18,7 +18,7 @@ def _call_ai(config, system, user, max_tokens=600):
                     "model": "llama-3.3-70b-versatile",
                     "messages": [
                         {"role": "system", "content": system},
-                        {"role": "user",   "content": user}
+                        {"role": "user", "content": user}
                     ],
                     "max_tokens": max_tokens,
                     "temperature": 0.3
@@ -29,13 +29,11 @@ def _call_ai(config, system, user, max_tokens=600):
                 return r.json()["choices"][0]["message"]["content"]
         except Exception as e:
             print("Groq error: " + str(e))
-
     if config.GEMINI_API_KEY:
         try:
+            prompt = system + "\n\n" + user
             body = {
-                "contents": [{"parts": [{"text": system + "
-
-" + user}]}],
+                "contents": [{"parts": [{"text": prompt}]}],
                 "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.3}
             }
             r = requests.post(
@@ -48,7 +46,6 @@ def _call_ai(config, system, user, max_tokens=600):
                 return r.json()["candidates"][0]["content"]["parts"][0]["text"]
         except Exception as e:
             print("Gemini error: " + str(e))
-
     return ""
 
 
@@ -60,21 +57,6 @@ def _safe_json(raw, fallback):
         return json.loads(cleaned)
     except Exception:
         pass
-    for oc, cc in [("[", "]"), ("{", "}")]:
-        s = cleaned.find(oc)
-        if s < 0:
-            continue
-        depth = 0
-        for i, ch in enumerate(cleaned[s:], s):
-            if ch == oc:
-                depth += 1
-            elif ch == cc:
-                depth -= 1
-                if depth == 0:
-                    try:
-                        return json.loads(cleaned[s:i+1])
-                    except Exception:
-                        break
     return fallback
 
 
@@ -85,6 +67,7 @@ def add_commentary(config, portfolio, pulse):
         fs = s["factor_score"]
         gr = s["guardrails"]
         dev_str = str(round(gr.deviation_pct, 1)) + "%" if gr.deviation_pct is not None else "unknown"
+        news_heads = "; ".join(n["headline"][:60] for n in s.get("news", [])[:2])
         line = (
             s["symbol"] + " (" + s["sector"] + "): "
             + "VERDICT=" + fs.verdict
@@ -95,25 +78,21 @@ def add_commentary(config, portfolio, pulse):
             + " Macro=" + str(fs.macro)
             + " Trend=" + gr.alignment.upper()
             + " MA20_dev=" + dev_str
+            + (" News: " + news_heads if news_heads else "")
         )
-        news_heads = "; ".join(n["headline"][:60] for n in s.get("news", [])[:2])
-        if news_heads:
-            line += " News: " + news_heads
         lines.append(line)
 
-    system = (
+    system_msg = (
         "You are an equity analyst explaining pre-computed rules-based investment verdicts. "
         "Verdicts and scores are ALREADY SET by a deterministic model. "
         "Write 2 sentences per stock: (1) why the rules gave this score, (2) what could invalidate it. "
         "NEVER suggest changing the verdict. "
         "Market fear today: " + fear + ". "
-        'Return a JSON array like: [{"s":"NVDA","why":"...","watch":"..."}]'
+        "Return a JSON array like: [{\"s\":\"NVDA\",\"why\":\"...\",\"watch\":\"...\"}]"
     )
-    user = "Explain these verdicts:
-" + "
-".join(lines)
+    user_msg = "Explain these verdicts:\n" + "\n".join(lines)
 
-    raw   = _call_ai(config, system, user, max_tokens=2000)
+    raw = _call_ai(config, system_msg, user_msg, max_tokens=2000)
     items = _safe_json(raw, [])
     if not isinstance(items, list):
         items = []
@@ -121,7 +100,7 @@ def add_commentary(config, portfolio, pulse):
 
     for s in portfolio:
         ai = ai_map.get(s["symbol"], {})
-        s["ai_why"]   = ai.get("why",   "Screened well on technical and quality factors.")
+        s["ai_why"] = ai.get("why", "Screened well on technical and quality factors.")
         s["ai_watch"] = ai.get("watch", "Monitor for trend deterioration or macro shift.")
 
     return portfolio
