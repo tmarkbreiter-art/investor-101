@@ -39,6 +39,12 @@ class Notifier:
         ds     = now.strftime("%b %d")
         return "AXIOM US - " + ds + " - " + str(n_buy) + " BUY / " + str(n_hold) + " HOLD - " + fear
 
-    def notify(self, portfolio, pulse, budget, html_dashboard):
+    def send_digest(self, portfolio, pulse):
         subject = self.build_subject(portfolio, pulse)
-        self.send(subject, html_dashboard)
+        try:
+            with open("docs/index.html", "r") as f:
+                html = f.read()
+        except Exception as e:
+            print("Could not read dashboard: " + str(e))
+            return False
+        return self.send(subject, html)
