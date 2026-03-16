@@ -83,14 +83,17 @@ def add_commentary(config, portfolio, pulse):
         lines.append(line)
 
     system_msg = (
-        "You are an equity analyst explaining pre-computed rules-based investment verdicts. "
-        "Verdicts and scores are ALREADY SET by a deterministic model. "
-        "Write 2 sentences per stock: (1) why the rules gave this score, (2) what could invalidate it. "
-        "NEVER suggest changing the verdict. "
-        "Market fear today: " + fear + ". "
-        "Return a JSON array like: [{\"s\":\"NVDA\",\"why\":\"...\",\"watch\":\"...\"}]"
+        "You are an expert investing teacher and financial coach talking directly to a beginner investor. "
+        "The rules-based model has ALREADY made its decisions — your job is to teach the investor WHY and WHAT TO DO NEXT. "
+        "For each stock write exactly 3 sentences: "
+        "(1) WHY the model scored it this way — explain the specific signals in plain English a beginner understands. "
+        "(2) WHAT ACTION to take right now — be concrete: 'Buy X shares at $Y', 'Wait for price to dip to $Z before entering', 'Hold your position, do not add yet'. "
+        "(3) WHAT TO WATCH — one specific number or event that would change the plan, e.g. 'If price drops below $168 sell immediately' or 'Watch earnings on April 23'. "
+        "Use plain English. Use dollar amounts. Be a coach, not a disclaimer. Never say 'consult a financial advisor'. "
+        "Market regime today: " + fear + ". Budget context: small retail investor, learning to grow wealth. "
+        "Return JSON array: [{\"s\":\"NVDA\",\"why\":\"...\",\"watch\":\"...\"}]"
     )
-    user_msg = "Explain these verdicts:\n" + "\n".join(lines)
+    user_msg = "Teach me about these positions and what I should do:\n" + "\n".join(lines)
 
     raw = _call_ai(config, system_msg, user_msg, max_tokens=2000)
     items = _safe_json(raw, [])
