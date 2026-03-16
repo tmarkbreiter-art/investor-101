@@ -12,7 +12,7 @@ class Notifier:
     def send(self, subject, html_body, recipients=None):
         cfg = self.config
         if recipients is None:
-            recipients = cfg.EMAIL_RECIPIENTS
+            recipients = cfg.EMAIL_RECEIVERS
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
