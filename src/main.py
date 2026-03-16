@@ -24,7 +24,7 @@ def run(config):
 
     print("Fetching market pulse...")
     pulse = provider.fetch_pulse()
-    print("  SPY " + str(round(pulse["spy_dp"],1)) + "%  Fear: " + pulse["fear_level"])
+    print("  SPY " + str(round(pulse["spy_dp"], 1)) + "%  Fear: " + pulse["fear_level"])
 
     symbols = [s["symbol"] for s in config.SCAN_UNIVERSE]
     for sym in config.WATCHLIST:
