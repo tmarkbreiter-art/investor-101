@@ -27,6 +27,8 @@ def _call_ai(config, system, user, max_tokens=600):
             )
             if r.ok:
                 return r.json()["choices"][0]["message"]["content"]
+            else:
+                print("Groq HTTP error: " + str(r.status_code) + " " + r.text[:200])
         except Exception as e:
             print("Groq error: " + str(e))
     if config.GEMINI_API_KEY:
@@ -44,6 +46,8 @@ def _call_ai(config, system, user, max_tokens=600):
             )
             if r.ok:
                 return r.json()["candidates"][0]["content"]["parts"][0]["text"]
+            else:
+                print("Gemini HTTP error: " + str(r.status_code) + " " + r.text[:200])
         except Exception as e:
             print("Gemini error: " + str(e))
     return ""
@@ -83,19 +87,20 @@ def add_commentary(config, portfolio, pulse):
         lines.append(line)
 
     system_msg = (
-        "You are an expert investing teacher and financial coach talking directly to a beginner investor. "
-        "The rules-based model has ALREADY made its decisions — your job is to teach the investor WHY and WHAT TO DO NEXT. "
-        "For each stock write exactly 3 sentences: "
-        "(1) WHY the model scored it this way — explain the specific signals in plain English a beginner understands. "
-        "(2) WHAT ACTION to take right now — be concrete: 'Buy X shares at $Y', 'Wait for price to dip to $Z before entering', 'Hold your position, do not add yet'. "
-        "(3) WHAT TO WATCH — one specific number or event that would change the plan, e.g. 'If price drops below $168 sell immediately' or 'Watch earnings on April 23'. "
-        "Use plain English. Use dollar amounts. Be a coach, not a disclaimer. Never say 'consult a financial advisor'. "
-        "Market regime today: " + fear + ". Budget context: small retail investor, learning to grow wealth. "
-        "Return JSON array: [{\"s\":\"NVDA\",\"why\":\"...\",\"watch\":\"...\"}]"
+        "You are an expert investing coach teaching a beginner investor. "
+        "The model has ALREADY decided verdicts - never change them. "
+        "For each stock return a JSON object with exactly two keys: "
+        "\"why\": 2 sentences - first explain in plain English WHY the model scored it this way using the actual signal data, "
+        "then give a CONCRETE ACTION like 'Buy 1 share at $183 now' or 'Wait for a dip to $170 before entering' or 'Hold, do not add more yet'. "
+        "\"watch\": 1 sentence - one specific price level or event to watch, e.g. 'If it drops below $168 sell immediately' or 'Watch earnings April 23 - a miss could drop it 10 percent'. "
+        "Use real dollar amounts from the data. Be direct. No filler. Talk to the investor like a coach. "
+        "Market today: " + fear + ". Small retail investor with limited budget learning to grow wealth. "
+        "Return ONLY a valid JSON array: [{\"s\":\"SYMBOL\",\"why\":\"...\",\"watch\":\"...\"}]"
     )
-    user_msg = "Teach me about these positions and what I should do:\n" + "\n".join(lines)
+    user_msg = "Coach me on these positions:\n" + "\n".join(lines)
 
     raw = _call_ai(config, system_msg, user_msg, max_tokens=2000)
+    print("AI raw response: " + raw[:300])
     items = _safe_json(raw, [])
     if not isinstance(items, list):
         items = []
