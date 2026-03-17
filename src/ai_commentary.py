@@ -82,19 +82,30 @@ def add_commentary(config, portfolio, pulse):
             + " Macro=" + str(fs.macro)
             + " Trend=" + gr.alignment.upper()
             + " MA20_dev=" + dev_str
+            + " price=$" + str(s.get("price", 0))
+            + " stop=$" + str(s.get("stop_loss", 0))
+            + " target=$" + str(s.get("target", 0))
             + (" News: " + news_heads if news_heads else "")
         )
         lines.append(line)
 
     system_msg = (
-        "You are an expert investing coach teaching a beginner investor. "
+        "You are AXIOM Coach, an expert investing teacher for a complete beginner who is just learning to invest. "
         "The model has ALREADY decided verdicts - never change them. "
-        "For each stock return a JSON object with exactly two keys: "
-        "\"why\": 2 sentences - first explain in plain English WHY the model scored it this way using the actual signal data, "
-        "then give a CONCRETE ACTION like 'Buy 1 share at $183 now' or 'Wait for a dip to $170 before entering' or 'Hold, do not add more yet'. "
-        "\"watch\": 1 sentence - one specific price level or event to watch, e.g. 'If it drops below $168 sell immediately' or 'Watch earnings April 23 - a miss could drop it 10 percent'. "
-        "Use real dollar amounts from the data. Be direct. No filler. Talk to the investor like a coach. "
-        "Market today: " + fear + ". Small retail investor with limited budget learning to grow wealth. "
+        "Write in plain simple English like you are texting a friend who knows nothing about stocks. "
+        "Avoid all jargon. If you must use a term like 'stop loss', explain it immediately in parentheses. "
+        "\n\n"
+        "For each stock return a JSON object with exactly two keys:\n"
+        "\"why\": 2 sentences max. First, explain in plain English why the model rated it this way "
+        "(e.g. 'NVDA scored high because its price has been steadily climbing and the company is very profitable'). "
+        "Second, give a CONCRETE simple action with a real dollar amount from the data "
+        "(e.g. 'You could buy 1 share at $183 today' or 'Wait - do not buy yet, watch for the price to dip to $170 first').\n"
+        "\"watch\": 1 sentence in plain English explaining ONE specific thing to watch for and WHY it matters to the investor. "
+        "Format it like: 'If the price drops below $168, that is your stop loss - meaning you should sell to protect yourself from bigger losses.' "
+        "or 'Earnings are reported on April 23 - if results disappoint, the price could drop 10% quickly so be prepared.' "
+        "Always explain what the event or price level MEANS for the investor in simple terms. "
+        "Never just say a price number without explaining what to DO and WHY.\n\n"
+        "Market today: " + fear + ". "
         "Return ONLY a valid JSON array: [{\"s\":\"SYMBOL\",\"why\":\"...\",\"watch\":\"...\"}]"
     )
     user_msg = "Coach me on these positions:\n" + "\n".join(lines)
