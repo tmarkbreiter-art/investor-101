@@ -68,8 +68,8 @@ def ma_val(mas, key):
 
 
 def check_icon(status):
-    m = {"ok": "OK", "warn": "WARN", "block": "BLOCK", "warning": "WARN"}
-    return m.get(status, "WARN")
+    m = {"ok": "✅", "warn": "⚠️", "block": "🚫", "warning": "⚠️"}
+    return m.get(status, "⚠️")
 
 
 def get_css():
@@ -91,6 +91,8 @@ def get_css():
         ".tbs{background:var(--card2);border:1px solid var(--border);border-radius:7px;padding:4px 10px;}",
         ".tbs-l{font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}",
         ".tbs-v{font-size:13px;font-weight:700;}",
+        ".budget-input{width:80px;font-size:13px;font-weight:700;border:none;background:transparent;color:var(--ink);text-align:center;outline:none;}",
+        ".budget-input:focus{border-bottom:2px solid var(--green);}",
         ".pulse{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}",
         ".pi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 16px;flex:1;min-width:120px;}",
         ".pi-l{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:3px;}",
@@ -106,7 +108,8 @@ def get_css():
         ".sec-t{font-size:20px;font-weight:700;}",
         ".sec-s{font-size:12px;color:var(--muted);}",
         ".grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(370px,1fr));gap:12px;margin-bottom:24px;}",
-        ".scard{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;border-top:3px solid #1A1614;}",
+        ".scard{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;border-top:3px solid #1A1614;cursor:pointer;transition:box-shadow 0.2s;}",
+        ".scard:hover{box-shadow:0 4px 20px rgba(0,0,0,0.10);}",
         ".sc-top{padding:16px 18px 12px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--border2);}",
         ".sc-sym{font-size:28px;font-weight:800;letter-spacing:-1px;}",
         ".sc-name{font-size:13px;font-weight:600;margin-bottom:2px;}",
@@ -115,6 +118,9 @@ def get_css():
         ".verdict{font-size:12px;font-weight:800;padding:5px 14px;border-radius:20px;border:1.5px solid;text-transform:uppercase;margin-bottom:8px;display:inline-block;}",
         ".sc-dollar{font-size:22px;font-weight:700;}",
         ".sc-pct{font-size:11px;color:var(--muted);}",
+        ".sc-expand{font-size:10px;color:var(--muted);text-align:center;padding:4px;border-top:1px solid var(--border2);background:var(--card2);}",
+        ".sc-body{display:none;}",
+        ".sc-body.open{display:block;}",
         ".sc-price{padding:12px 18px;background:#FAFAF7;border-bottom:1px solid var(--border2);}",
         ".price-val{font-size:20px;font-weight:700;margin-bottom:4px;}",
         ".chg{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;margin-bottom:8px;}",
@@ -145,6 +151,19 @@ def get_css():
         ".sc-mas{display:flex;gap:12px;padding:8px 18px;background:var(--card2);border-top:1px solid var(--border2);}",
         ".ma{font-size:11px;color:var(--muted);}",
         ".footer{text-align:center;font-size:11px;color:var(--muted);padding-top:20px;border-top:1px solid var(--border);margin-top:40px;line-height:1.8;}",
+        ".chat-btn{position:fixed;bottom:28px;right:28px;background:#059669;color:#fff;border:none;border-radius:50px;padding:14px 22px;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(5,150,105,0.4);z-index:1000;}",
+        ".chat-btn:hover{background:#047857;}",
+        ".chat-box{position:fixed;bottom:90px;right:28px;width:370px;max-height:520px;background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.15);display:none;flex-direction:column;z-index:1000;}",
+        ".chat-box.open{display:flex;}",
+        ".chat-hdr{padding:14px 18px;border-bottom:1px solid var(--border);font-weight:700;font-size:14px;display:flex;justify-content:space-between;align-items:center;}",
+        ".chat-close{cursor:pointer;color:var(--muted);font-size:18px;}",
+        ".chat-msgs{flex:1;overflow-y:auto;padding:14px 18px;display:flex;flex-direction:column;gap:10px;}",
+        ".msg{padding:8px 12px;border-radius:12px;font-size:13px;line-height:1.6;max-width:90%;}",
+        ".msg.user{background:#059669;color:#fff;align-self:flex-end;}",
+        ".msg.ai{background:var(--card2);border:1px solid var(--border);align-self:flex-start;}",
+        ".chat-inp{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border);}",
+        ".chat-inp input{flex:1;border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:13px;outline:none;}",
+        ".chat-inp button{background:#059669;color:#fff;border:none;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;}",
     ]
     return "\n".join(lines)
 
@@ -179,10 +198,12 @@ def build_card(p, config):
     mas = gr.mas
 
     sym_color = "#059669" if verdict == "BUY" else "#D97706" if verdict == "HOLD" else "#DC2626"
+    card_id = "card-" + sym
 
     parts = []
-    parts.append("<div class='scard'>")
+    parts.append("<div class='scard' id='" + card_id + "' onclick='toggleCard(\"" + card_id + "\")'>")
 
+    # Always visible top
     parts.append("<div class='sc-top'>")
     parts.append("<div>")
     parts.append("<div class='sc-sym' style='color:" + sym_color + "'>" + sym + "</div>")
@@ -191,9 +212,14 @@ def build_card(p, config):
     parts.append("</div>")
     parts.append("<div class='sc-right'>")
     parts.append("<div class='verdict' style='background:" + vc["bg"] + ";color:" + vc["text"] + ";border-color:" + vc["border"] + "'>" + verdict + "</div>")
-    parts.append("<div class='sc-dollar'>" + fmt_dollar(alloc_d) + "</div>")
+    parts.append("<div class='sc-dollar alloc-val' data-pct='" + str(alloc_p) + "'>" + fmt_dollar(alloc_d) + "</div>")
     parts.append("<div class='sc-pct'>" + str(alloc_p) + "% of budget</div>")
     parts.append("</div></div>")
+
+    parts.append("<div class='sc-expand' id='expand-" + card_id + "'>▼ Click to expand</div>")
+
+    # Collapsible body
+    parts.append("<div class='sc-body' id='body-" + card_id + "'>")
 
     parts.append("<div class='sc-price'>")
     parts.append("<div class='price-val'>$" + "{:.2f}".format(price) + "</div>")
@@ -240,7 +266,7 @@ def build_card(p, config):
     parts.append("</div>")
 
     parts.append("<div class='sc-ai'>")
-    parts.append("<div class='ai-badge'>AI Commentary - not the decision engine</div>")
+    parts.append("<div class='ai-badge'>AI Coach - not the decision engine</div>")
     parts.append("<div class='ai-why'>" + ai_why + "</div>")
     parts.append("<div class='ai-watch'>Watch: " + ai_watch + "</div>")
     parts.append("</div>")
@@ -251,7 +277,8 @@ def build_card(p, config):
     parts.append("<span class='ma'>MA20 <strong>" + ma_val(mas, "ma20") + "</strong></span>")
     parts.append("</div>")
 
-    parts.append("</div>")
+    parts.append("</div>")  # end sc-body
+    parts.append("</div>")  # end scard
     return "\n".join(parts)
 
 
@@ -289,6 +316,16 @@ class DashboardGenerator:
         uso_dp     = "{:+.1f}%".format(uso.get("dp", 0))
         vixy_price = "${:.2f}".format(vixy.get("price", 0))
 
+        portfolio_json = "[" + ",".join(
+            "{\"sym\":\"" + p["symbol"] + "\",\"verdict\":\"" + p["factor_score"].verdict +
+            "\",\"score\":" + str(p["factor_score"].total) +
+            ",\"price\":" + str(p["price"]) +
+            ",\"stop\":" + str(p.get("stop_loss", 0)) +
+            ",\"target\":" + str(p.get("target", 0)) +
+            ",\"alloc\":" + str(p.get("alloc_dollar", 0)) + "}"
+            for p in portfolio
+        ) + "]"
+
         parts = []
         parts.append("<!DOCTYPE html><html lang='en'><head>")
         parts.append("<meta charset='UTF-8'>")
@@ -300,9 +337,9 @@ class DashboardGenerator:
         parts.append("<div class='topbar'><div class='tbi'>")
         parts.append("<div class='brand'>INVESTOR <span>101</span> - AXIOM US</div>")
         parts.append("<div class='tbr'>")
-        parts.append("<div class='tbs'><div class='tbs-l'>Budget</div><div class='tbs-v'>" + fmt_dollar(budget) + "</div></div>")
-        parts.append("<div class='tbs'><div class='tbs-l'>Invested</div><div class='tbs-v'>" + fmt_dollar(invested) + "</div></div>")
-        parts.append("<div class='tbs'><div class='tbs-l'>Cash</div><div class='tbs-v'>" + fmt_dollar(cash) + "</div></div>")
+        parts.append("<div class='tbs'><div class='tbs-l'>Budget</div><div class='tbs-v'>$<input class='budget-input' id='budgetInput' type='number' value='" + str(int(budget)) + "' onchange='updateBudget(this.value)'/></div></div>")
+        parts.append("<div class='tbs'><div class='tbs-l'>Invested</div><div class='tbs-v' id='investedVal'>" + fmt_dollar(invested) + "</div></div>")
+        parts.append("<div class='tbs'><div class='tbs-l'>Cash</div><div class='tbs-v' id='cashVal'>" + fmt_dollar(cash) + "</div></div>")
         parts.append("<div class='tbs'><div class='tbs-l'>Signals</div><div class='tbs-v'>" + str(n_buy) + " BUY / " + str(n_hold) + " HOLD</div></div>")
         parts.append("<div style='font-size:11px;color:#9D9690'>" + date_str + " - " + time_str + "</div>")
         parts.append("</div></div></div>")
@@ -325,13 +362,13 @@ class DashboardGenerator:
         parts.append("<div class='stats'>")
         parts.append("<div class='sb'><div class='sb-l'>Buy Signals</div><div class='sb-v' style='color:#059669'>" + str(n_buy) + "</div><div class='sb-s'>rules-verified</div></div>")
         parts.append("<div class='sb'><div class='sb-l'>Hold</div><div class='sb-v' style='color:#D97706'>" + str(n_hold) + "</div><div class='sb-s'>watch for entry</div></div>")
-        parts.append("<div class='sb'><div class='sb-l'>Invested</div><div class='sb-v'>" + fmt_dollar(invested) + "</div><div class='sb-s'>" + str(len(portfolio)) + " positions</div></div>")
-        parts.append("<div class='sb'><div class='sb-l'>Cash Reserve</div><div class='sb-v'>" + fmt_dollar(cash) + "</div><div class='sb-s'>" + str(int(self.config.CASH_RESERVE * 100)) + "% kept safe</div></div>")
+        parts.append("<div class='sb'><div class='sb-l'>Invested</div><div class='sb-v' id='investedStat'>" + fmt_dollar(invested) + "</div><div class='sb-s'>" + str(len(portfolio)) + " positions</div></div>")
+        parts.append("<div class='sb'><div class='sb-l'>Cash Reserve</div><div class='sb-v' id='cashStat'>" + fmt_dollar(cash) + "</div><div class='sb-s'>" + str(int(self.config.CASH_RESERVE * 100)) + "% kept safe</div></div>")
         parts.append("</div>")
 
         parts.append("<div class='sec-hdr'>")
         parts.append("<div class='sec-t'>Today's Portfolio</div>")
-        parts.append("<div class='sec-s'>Scores are deterministic - AI for commentary only - Updated " + time_str + "</div>")
+        parts.append("<div class='sec-s'>Click any card to expand. Scores deterministic - AI for coaching only - Updated " + time_str + "</div>")
         parts.append("</div>")
         parts.append("<div class='grid'>" + cards + "</div>")
 
@@ -341,5 +378,97 @@ class DashboardGenerator:
         parts.append("Data: Finnhub / yfinance | Commentary: Groq/Gemini | Decisions: Rules-based Python model")
         parts.append("</div>")
 
-        parts.append("</div></body></html>")
+        parts.append("</div>")
+
+        # Chat button + box
+        parts.append("<button class='chat-btn' onclick='toggleChat()'>💬 Ask AXIOM</button>")
+        parts.append("<div class='chat-box' id='chatBox'>")
+        parts.append("<div class='chat-hdr'><span>💬 AXIOM Coach</span><span class='chat-close' onclick='toggleChat()'>✕</span></div>")
+        parts.append("<div class='chat-msgs' id='chatMsgs'><div class='msg ai'>Hi! I know your full portfolio today. Ask me anything — what to buy, what a stop loss means, or how to grow your money.</div></div>")
+        parts.append("<div class='chat-inp'><input id='chatIn' type='text' placeholder='Ask anything...' onkeydown='if(event.key==\"Enter\")sendMsg()'/><button onclick='sendMsg()'>Send</button></div>")
+        parts.append("</div>")
+
+        cash_reserve = self.config.CASH_RESERVE
+
+        parts.append("""
+<script>
+const PORTFOLIO = """ + portfolio_json + """;
+const BUDGET_DEFAULT = """ + str(int(budget)) + """;
+const CASH_RESERVE = """ + str(cash_reserve) + """;
+const INVESTED = """ + str(float(invested)) + """;
+
+function fmt(n){ return '$'+parseFloat(n).toFixed(2).replace(/\\B(?=(\\d{3})+(?!\\d))/g,','); }
+
+function toggleCard(id){
+    const body = document.getElementById('body-'+id);
+    const lbl  = document.getElementById('expand-'+id);
+    if(!body) return;
+    body.classList.toggle('open');
+    lbl.textContent = body.classList.contains('open') ? '▲ Click to collapse' : '▼ Click to expand';
+}
+
+function updateBudget(val){
+    const b = parseFloat(val) || BUDGET_DEFAULT;
+    localStorage.setItem('axiom_budget', b);
+    document.getElementById('cashVal').textContent = fmt(b * CASH_RESERVE);
+    document.getElementById('cashStat').textContent = fmt(b * CASH_RESERVE);
+    document.querySelectorAll('.alloc-val').forEach(el => {
+        const pct = parseFloat(el.dataset.pct) || 0;
+        el.textContent = fmt(b * pct / 100);
+    });
+}
+
+window.onload = function(){
+    const saved = localStorage.getItem('axiom_budget');
+    if(saved){ document.getElementById('budgetInput').value = saved; updateBudget(saved); }
+};
+
+function toggleChat(){
+    document.getElementById('chatBox').classList.toggle('open');
+}
+
+async function sendMsg(){
+    const inp = document.getElementById('chatIn');
+    const msg = inp.value.trim();
+    if(!msg) return;
+    inp.value = '';
+    addMsg(msg, 'user');
+    addMsg('Thinking...', 'ai', 'thinking');
+
+    const context = 'Portfolio today: ' + PORTFOLIO.map(p =>
+        p.sym + ' ' + p.verdict + ' score=' + p.score + ' price=$' + p.price +
+        ' stop=$' + p.stop + ' target=$' + p.target + ' alloc=$' + p.alloc
+    ).join(', ') + '. Market fear: """ + fear + """.';
+
+    try {
+        const r = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({messages:[
+                {role:'system', content:'You are AXIOM Coach, an expert investing teacher for a beginner investor. You have full context of their portfolio. Be direct, use dollar amounts, explain simply. Never say consult a financial advisor. Context: ' + context},
+                {role:'user', content: msg}
+            ]})
+        });
+        const data = await r.json();
+        const reply = data.choices[0].message.content;
+        document.getElementById('thinking')?.remove();
+        addMsg(reply, 'ai');
+    } catch(e) {
+        document.getElementById('thinking')?.remove();
+        addMsg('Chat unavailable - deploy to Vercel to enable live chat.', 'ai');
+    }
+}
+
+function addMsg(text, role, id){
+    const box = document.getElementById('chatMsgs');
+    const div = document.createElement('div');
+    div.className = 'msg ' + role;
+    div.textContent = text;
+    if(id) div.id = id;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+}
+</script>
+</body></html>""")
+
         return "\n".join(parts)
