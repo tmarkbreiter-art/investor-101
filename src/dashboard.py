@@ -151,6 +151,22 @@ def get_css():
         ".sc-mas{display:flex;gap:12px;padding:8px 18px;background:var(--card2);border-top:1px solid var(--border2);}",
         ".ma{font-size:11px;color:var(--muted);}",
         ".footer{text-align:center;font-size:11px;color:var(--muted);padding-top:20px;border-top:1px solid var(--border);margin-top:40px;line-height:1.8;}",
+        # --- NEW: Allocation + Risk/Reward styles ---
+        ".alloc-section{padding:12px 18px;border-bottom:1px solid var(--border2);background:#F8FFF8;}",
+        ".alloc-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}",
+        ".alloc-lbl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;min-width:60px;}",
+        ".alloc-inp{width:90px;font-size:14px;font-weight:700;border:1.5px solid var(--border);border-radius:7px;padding:5px 10px;background:#fff;color:var(--ink);outline:none;}",
+        ".alloc-inp:focus{border-color:var(--green);}",
+        ".alloc-shares{font-size:12px;color:var(--muted);margin-left:4px;}",
+        ".rr-panel{background:#fff;border:1px solid var(--border2);border-radius:10px;padding:10px 14px;margin-top:6px;}",
+        ".rr-title{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:7px;}",
+        ".rr-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:4px;}",
+        ".rr-gain{color:#059669;font-weight:700;}",
+        ".rr-loss{color:#DC2626;font-weight:700;}",
+        ".rr-ratio{font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;border:1.5px solid #ccc;background:#f5f5f5;}",
+        ".ask-axiom-btn{display:block;width:100%;margin-top:8px;background:#EFF6FF;color:#1D4ED8;border:1.5px solid #BFDBFE;border-radius:8px;padding:7px;font-size:12px;font-weight:700;cursor:pointer;text-align:center;}",
+        ".ask-axiom-btn:hover{background:#DBEAFE;}",
+        # --- Chat styles ---
         ".chat-btn{position:fixed;bottom:28px;right:28px;background:#059669;color:#fff;border:none;border-radius:50px;padding:14px 22px;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(5,150,105,0.4);z-index:1000;}",
         ".chat-btn:hover{background:#047857;}",
         ".chat-box{position:fixed;bottom:90px;right:28px;width:370px;max-height:520px;background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.15);display:none;flex-direction:column;z-index:1000;}",
@@ -211,8 +227,8 @@ def build_card(p, config):
     parts.append("</div>")
     parts.append("<div class='sc-right'>")
     parts.append("<div class='verdict' style='background:" + vc["bg"] + ";color:" + vc["text"] + ";border-color:" + vc["border"] + "'>" + verdict + "</div>")
-    parts.append("<div class='sc-dollar alloc-val' data-pct='" + str(alloc_p) + "'>" + fmt_dollar(alloc_d) + "</div>")
-    parts.append("<div class='sc-pct'>" + str(alloc_p) + "% of budget</div>")
+    parts.append("<div class='sc-dollar' id='alloc-display-" + sym + "'>" + fmt_dollar(alloc_d) + "</div>")
+    parts.append("<div class='sc-pct' id='alloc-pct-" + sym + "'>" + str(alloc_p) + "% of budget</div>")
     parts.append("</div></div>")
 
     parts.append("<div class='sc-expand' id='expand-" + card_id + "'>▼ Click to expand</div>")
@@ -261,6 +277,23 @@ def build_card(p, config):
     parts.append("<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$" + "{:.2f}".format(buy_lo) + "-$" + "{:.2f}".format(buy_hi) + "</div></div>")
     parts.append("<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$" + "{:.2f}".format(stop) + "</div></div>")
     parts.append("<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$" + "{:.2f}".format(target) + "</div></div>")
+    parts.append("</div>")
+
+    # NEW: Allocation input + Risk/Reward panel
+    parts.append("<div class='alloc-section' onclick='event.stopPropagation()'>")
+    parts.append("<div class='alloc-row'>")
+    parts.append("<span class='alloc-lbl'>My Alloc</span>")
+    parts.append("<input class='alloc-inp' id='alloc-inp-" + sym + "' type='number' min='0' placeholder='$ amount'")
+    parts.append("  oninput='updateRR(\"" + sym + "\"," + str(price) + "," + str(stop) + "," + str(target) + ")' />")
+    parts.append("<span class='alloc-shares' id='shares-" + sym + "'></span>")
+    parts.append("</div>")
+    parts.append("<div class='rr-panel'>")
+    parts.append("<div class='rr-title'>Risk / Reward Preview</div>")
+    parts.append("<div class='rr-row'><span>💰 Potential Gain (to target)</span><span class='rr-gain' id='rr-gain-" + sym + "'>-</span></div>")
+    parts.append("<div class='rr-row'><span>🛑 Potential Loss (to stop)</span><span class='rr-loss' id='rr-loss-" + sym + "'>-</span></div>")
+    parts.append("<div class='rr-row'><span>📊 Risk:Reward Ratio</span><span class='rr-ratio' id='rr-ratio-" + sym + "'>-</span></div>")
+    parts.append("</div>")
+    parts.append("<button class='ask-axiom-btn' onclick='askAxiomAbout(\"" + sym + "\",\"" + verdict + "\"," + str(fs.total) + "," + str(price) + "," + str(stop) + "," + str(target) + ")'>💬 Ask AXIOM about " + sym + "</button>")
     parts.append("</div>")
 
     parts.append("<div class='sc-ai'>")
@@ -338,8 +371,8 @@ class DashboardGenerator:
         parts.append("<div class='brand'>INVESTOR <span>101</span> - AXIOM US</div>")
         parts.append("<div class='tbr'>")
         parts.append("<div class='tbs'><div class='tbs-l'>Budget</div><div class='tbs-v'>$<input class='budget-input' id='budgetInput' type='number' value='" + str(int(budget)) + "' onchange='updateBudget(this.value)'/></div></div>")
-        parts.append("<div class='tbs'><div class='tbs-l'>Invested</div><div class='tbs-v' id='investedVal'>" + fmt_dollar(invested) + "</div></div>")
-        parts.append("<div class='tbs'><div class='tbs-l'>Cash</div><div class='tbs-v' id='cashVal'>" + fmt_dollar(cash) + "</div></div>")
+        parts.append("<div class='tbs'><div class='tbs-l'>Invested</div><div class='tbs-v' id='investedVal'>$0.00</div></div>")
+        parts.append("<div class='tbs'><div class='tbs-l'>Cash</div><div class='tbs-v' id='cashVal'>" + fmt_dollar(budget) + "</div></div>")
         parts.append("<div class='tbs'><div class='tbs-l'>Signals</div><div class='tbs-v'>" + str(n_buy) + " BUY / " + str(n_hold) + " HOLD</div></div>")
         parts.append("<div style='font-size:11px;color:#9D9690'>" + date_str + " - " + time_str + "</div>")
         parts.append("</div></div></div>")
@@ -362,13 +395,13 @@ class DashboardGenerator:
         parts.append("<div class='stats'>")
         parts.append("<div class='sb'><div class='sb-l'>Buy Signals</div><div class='sb-v' style='color:#059669'>" + str(n_buy) + "</div><div class='sb-s'>rules-verified</div></div>")
         parts.append("<div class='sb'><div class='sb-l'>Hold</div><div class='sb-v' style='color:#D97706'>" + str(n_hold) + "</div><div class='sb-s'>watch for entry</div></div>")
-        parts.append("<div class='sb'><div class='sb-l'>Invested</div><div class='sb-v' id='investedStat'>" + fmt_dollar(invested) + "</div><div class='sb-s'>" + str(len(portfolio)) + " positions</div></div>")
-        parts.append("<div class='sb'><div class='sb-l'>Cash Reserve</div><div class='sb-v' id='cashStat'>" + fmt_dollar(cash) + "</div><div class='sb-s'>" + str(int(self.config.CASH_RESERVE * 100)) + "% kept safe</div></div>")
+        parts.append("<div class='sb'><div class='sb-l'>Invested</div><div class='sb-v' id='investedStat'>$0.00</div><div class='sb-s'>" + str(len(portfolio)) + " positions</div></div>")
+        parts.append("<div class='sb'><div class='sb-l'>Cash Reserve</div><div class='sb-v' id='cashStat'>" + fmt_dollar(budget) + "</div><div class='sb-s'>" + str(int(self.config.CASH_RESERVE * 100)) + "% kept safe</div></div>")
         parts.append("</div>")
 
         parts.append("<div class='sec-hdr'>")
         parts.append("<div class='sec-t'>Today's Portfolio</div>")
-        parts.append("<div class='sec-s'>Click any card to expand. Scores deterministic - AI for coaching only - Updated " + time_str + "</div>")
+        parts.append("<div class='sec-s'>Click any card to expand. Type your allocation to see risk/reward. Updated " + time_str + "</div>")
         parts.append("</div>")
         parts.append("<div class='grid'>" + cards + "</div>")
 
@@ -382,7 +415,7 @@ class DashboardGenerator:
         parts.append("<button class='chat-btn' onclick='toggleChat()'>💬 Ask AXIOM</button>")
         parts.append("<div class='chat-box' id='chatBox'>")
         parts.append("<div class='chat-hdr'><span>💬 AXIOM Coach</span><span class='chat-close' onclick='toggleChat()'>✕</span></div>")
-        parts.append("<div class='chat-msgs' id='chatMsgs'><div class='msg ai'>Hi! I know your full portfolio today. Ask me anything — what to buy, what a stop loss means, or how to grow your money.</div></div>")
+        parts.append("<div class='chat-msgs' id='chatMsgs'><div class='msg ai'>Hi! I know your full portfolio today. Type a $ amount into any stock card to see risk/reward, or ask me anything about the portfolio.</div></div>")
         parts.append("<div class='chat-inp'><input id='chatIn' type='text' placeholder='Ask anything...' onkeydown='if(event.key==\"Enter\")sendMsg()'/><button onclick='sendMsg()'>Send</button></div>")
         parts.append("</div>")
 
@@ -391,7 +424,7 @@ class DashboardGenerator:
         parts.append("const BUDGET_DEFAULT = " + str(int(budget)) + ";")
         parts.append("const CASH_RESERVE = " + str(cash_reserve) + ";")
         parts.append("const FEAR = '" + fear + "';")
-        parts.append("""
+        parts.append(r"""
 function fmt(n){ return '$'+parseFloat(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
 
 function toggleCard(id){
@@ -399,23 +432,81 @@ function toggleCard(id){
     const lbl  = document.getElementById('expand-'+id);
     if(!body) return;
     body.classList.toggle('open');
-    lbl.textContent = body.classList.contains('open') ? '▲ Click to collapse' : '▼ Click to expand';
+    lbl.textContent = body.classList.contains('open') ? '\u25b2 Click to collapse' : '\u25bc Click to expand';
 }
 
 function updateBudget(val){
     const b = parseFloat(val) || BUDGET_DEFAULT;
     localStorage.setItem('axiom_budget', b);
-    document.getElementById('cashVal').textContent = fmt(b * CASH_RESERVE);
-    document.getElementById('cashStat').textContent = fmt(b * CASH_RESERVE);
-    document.querySelectorAll('.alloc-val').forEach(el => {
-        const pct = parseFloat(el.dataset.pct) || 0;
-        el.textContent = fmt(b * pct / 100);
-    });
+    recalcTotals();
+}
+
+function getUserAlloc(sym){
+    const inp = document.getElementById('alloc-inp-'+sym);
+    if(inp) return parseFloat(inp.value)||0;
+    return 0;
+}
+
+function recalcTotals(){
+    let total = 0;
+    PORTFOLIO.forEach(p => { total += getUserAlloc(p.sym); });
+    const budget = parseFloat(document.getElementById('budgetInput').value)||BUDGET_DEFAULT;
+    const cash = budget - total;
+    document.getElementById('investedVal').textContent = fmt(total);
+    document.getElementById('investedStat').textContent = fmt(total);
+    document.getElementById('cashVal').textContent = fmt(cash < 0 ? 0 : cash);
+    document.getElementById('cashStat').textContent = fmt(cash < 0 ? 0 : cash);
+}
+
+function updateRR(sym, price, stop, target){
+    const alloc = getUserAlloc(sym);
+    const sharesEl = document.getElementById('shares-'+sym);
+    const gainEl   = document.getElementById('rr-gain-'+sym);
+    const lossEl   = document.getElementById('rr-loss-'+sym);
+    const ratioEl  = document.getElementById('rr-ratio-'+sym);
+    if(!sharesEl) return;
+    if(alloc <= 0 || price <= 0){
+        sharesEl.textContent = '';
+        gainEl.textContent = '-';
+        lossEl.textContent = '-';
+        ratioEl.textContent = '-';
+        recalcTotals();
+        return;
+    }
+    const shares = alloc / price;
+    sharesEl.textContent = '= ' + shares.toFixed(4) + ' shares';
+    const gain = (target - price) * shares;
+    const loss = (price - stop) * shares;
+    gainEl.textContent = '+' + fmt(gain);
+    lossEl.textContent = '-' + fmt(loss);
+    const ratio = loss > 0 ? gain/loss : 0;
+    const ratioStr = '1 : ' + ratio.toFixed(1);
+    ratioEl.textContent = ratioStr;
+    if(ratio >= 2){
+        ratioEl.style.background='#F0FDF4'; ratioEl.style.color='#059669'; ratioEl.style.borderColor='#059669';
+    } else if(ratio >= 1){
+        ratioEl.style.background='#FFFBEB'; ratioEl.style.color='#D97706'; ratioEl.style.borderColor='#D97706';
+    } else {
+        ratioEl.style.background='#FFF1F2'; ratioEl.style.color='#DC2626'; ratioEl.style.borderColor='#DC2626';
+    }
+    recalcTotals();
+}
+
+function askAxiomAbout(sym, verdict, score, price, stop, target){
+    const alloc = getUserAlloc(sym);
+    const budget = parseFloat(document.getElementById('budgetInput').value)||BUDGET_DEFAULT;
+    const q = 'I am looking at ' + sym + ' which has a ' + verdict + ' signal with score ' + score +
+        '. Current price is $' + price + ', stop loss $' + stop + ', target $' + target +
+        '. My total budget is $' + budget + (alloc > 0 ? ' and I am thinking of putting in $' + alloc + '. Is this a good amount?' : '. How much should I allocate?');
+    document.getElementById('chatBox').classList.add('open');
+    document.getElementById('chatIn').value = q;
+    sendMsg();
 }
 
 window.onload = function(){
     const saved = localStorage.getItem('axiom_budget');
-    if(saved){ document.getElementById('budgetInput').value = saved; updateBudget(saved); }
+    if(saved){ document.getElementById('budgetInput').value = saved; }
+    recalcTotals();
 };
 
 function toggleChat(){
@@ -431,14 +522,14 @@ async function sendMsg(){
     addMsg('Thinking...', 'ai', 'thinking');
     const context = 'Portfolio today: ' + PORTFOLIO.map(p =>
         p.sym + ' ' + p.verdict + ' score=' + p.score + ' price=$' + p.price +
-        ' stop=$' + p.stop + ' target=$' + p.target + ' alloc=$' + p.alloc
+        ' stop=$' + p.stop + ' target=$' + p.target + ' userAlloc=$' + getUserAlloc(p.sym)
     ).join(', ') + '. Market fear: ' + FEAR + '.';
     try {
         const r = await fetch('/api/chat', {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({messages:[
-                {role:'system', content:'You are AXIOM Coach, an expert investing teacher for a beginner investor. You have full context of their portfolio. Be direct, use dollar amounts, explain simply. Never say consult a financial advisor. Context: ' + context},
+                {role:'system', content:'You are AXIOM Coach, an expert investing teacher for a beginner investor. You have full context of their portfolio including their current custom allocations. Be direct, use dollar amounts, explain simply. Never say consult a financial advisor. Context: ' + context},
                 {role:'user', content: msg}
             ]})
         });
