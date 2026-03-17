@@ -1,44 +1,38 @@
-name: AXIOM US Daily Run
+name: AXIOM Daily + Market Hours Refresh
 
 on:
   schedule:
-    - cron: '0 14-22 * * 1-5'
+    # Run every 30 minutes Mon-Fri during market hours (9:00am - 4:30pm ET = 13:00-20:30 UTC)
+    - cron: "0,30 13-20 * * 1-5"
+    # Also run once at 6am ET daily for pre-market snapshot
+    - cron: "0 10 * * 1-5"
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  run-axiom:
+  run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests yfinance python-dotenv pytz
+        run: pip install -r requirements.txt
 
-      - name: Run AXIOM US
+      - name: Run AXIOM
         env:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
-          GROQ_API_KEY:    ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY:  ${{ secrets.GEMINI_API_KEY }}
-          BUDGET:          ${{ secrets.BUDGET }}
-          EMAIL_SENDER:    ${{ secrets.EMAIL_SENDER }}
-          EMAIL_PASSWORD:  ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_RECEIVERS: ${{ secrets.EMAIL_RECEIVERS }}
-          WATCHLIST:       ${{ secrets.WATCHLIST }}
-        run: python run.py
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python main.py
 
-      - name: Commit & push updated dashboard
+      - name: Commit and push dashboard
         run: |
-          git config user.name  "AXIOM Bot"
-          git config user.email "axiom@users.noreply.github.com"
+          git config user.name "axiom-bot"
+          git config user.email "axiom@bot.com"
           git add docs/index.html
-          git diff --staged --quiet || git commit -m "AXIOM US dashboard - $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "auto: refresh $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
