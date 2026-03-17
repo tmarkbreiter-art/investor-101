@@ -2,19 +2,14 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1.0'>
 <title>INVESTOR 101 - AXIOM US - Tuesday, March 17 2026</title>
-<style>:root{
---page:#F5F0E8;--card:#fff;--card2:#FAFAF7;--border:#E2DDD4;--border2:#EDE9E0;
---ink:#1A1614;--text:#57534E;--muted:#9D9690;
---green:#059669;--green-bg:#F0FDF4;--red:#DC2626;--red-bg:#FFF1F2;
---orange:#D97706;--orange-bg:#FFFBEB;--blue:#1D4ED8;--blue-bg:#EFF6FF;
-}
+<style>
+:root{--page:#F5F0E8;--card:#fff;--card2:#FAFAF7;--border:#E2DDD4;--border2:#EDE9E0;--ink:#1A1614;--text:#57534E;--muted:#9D9690;--green:#059669;--green-bg:#F0FDF4;--red:#DC2626;--red-bg:#FFF1F2;--orange:#D97706;--orange-bg:#FFFBEB;--blue:#1D4ED8;--blue-bg:#EFF6FF;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--page);color:var(--ink);font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;}
 .wrap{max-width:1200px;margin:0 auto;padding:0 16px 60px;}
 .topbar{background:var(--card);border-bottom:1px solid var(--border);padding:0 20px;margin-bottom:20px;}
 .tbi{display:flex;align-items:center;justify-content:space-between;height:58px;gap:12px;flex-wrap:wrap;}
-.brand{font-size:17px;font-weight:800;}
-.brand span{color:#059669;}
+.brand{font-size:17px;font-weight:800;}.brand span{color:#059669;}
 .tbr{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .tbs{background:var(--card2);border:1px solid var(--border);border-radius:7px;padding:4px 10px;}
 .tbs-l{font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
@@ -24,17 +19,14 @@ body{background:var(--page);color:var(--ink);font-family:system-ui,sans-serif;fo
 .pulse{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
 .pi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 16px;flex:1;min-width:120px;}
 .pi-l{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:3px;}
-.pi-v{font-size:20px;font-weight:700;margin-bottom:2px;}
-.pi-c{font-size:11px;font-weight:600;}
+.pi-v{font-size:20px;font-weight:700;margin-bottom:2px;}.pi-c{font-size:11px;font-weight:600;}
 .regime{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin-bottom:16px;}
 .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:20px;}
 .sb{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;}
 .sb-l{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
-.sb-v{font-size:20px;font-weight:700;}
-.sb-s{font-size:11px;color:var(--muted);margin-top:2px;}
+.sb-v{font-size:20px;font-weight:700;}.sb-s{font-size:11px;color:var(--muted);margin-top:2px;}
 .sec-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;}
-.sec-t{font-size:20px;font-weight:700;}
-.sec-s{font-size:12px;color:var(--muted);}
+.sec-t{font-size:20px;font-weight:700;}.sec-s{font-size:12px;color:var(--muted);}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(370px,1fr));gap:12px;margin-bottom:24px;}
 .scard{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;border-top:3px solid #1A1614;cursor:pointer;transition:box-shadow 0.2s;}
 .scard:hover{box-shadow:0 4px 20px rgba(0,0,0,0.10);}
@@ -44,11 +36,9 @@ body{background:var(--page);color:var(--ink);font-family:system-ui,sans-serif;fo
 .sc-sec{display:inline-block;font-size:10px;background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:2px 9px;color:var(--muted);text-transform:uppercase;}
 .sc-right{text-align:right;}
 .verdict{font-size:12px;font-weight:800;padding:5px 14px;border-radius:20px;border:1.5px solid;text-transform:uppercase;margin-bottom:8px;display:inline-block;}
-.sc-dollar{font-size:22px;font-weight:700;}
-.sc-pct{font-size:11px;color:var(--muted);}
+.sc-dollar{font-size:22px;font-weight:700;}.sc-pct{font-size:11px;color:var(--muted);}
 .sc-expand{font-size:10px;color:var(--muted);text-align:center;padding:4px;border-top:1px solid var(--border2);background:var(--card2);}
-.sc-body{display:none;}
-.sc-body.open{display:block;}
+.sc-body{display:none;}.sc-body.open{display:block;}
 .sc-price{padding:12px 18px;background:#FAFAF7;border-bottom:1px solid var(--border2);}
 .price-val{font-size:20px;font-weight:700;margin-bottom:4px;}
 .chg{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;margin-bottom:8px;}
@@ -61,13 +51,11 @@ body{background:var(--page);color:var(--ink);font-family:system-ui,sans-serif;fo
 .sbar{display:flex;align-items:center;gap:8px;font-size:11px;}
 .sbar-l{width:70px;color:var(--text);font-weight:600;}
 .sbar-t{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;}
-.sbar-f{height:100%;border-radius:3px;}
-.sbar-v{width:32px;text-align:right;font-weight:700;}
+.sbar-f{height:100%;border-radius:3px;}.sbar-v{width:32px;text-align:right;font-weight:700;}
 .checks{padding:12px 18px;border-bottom:1px solid var(--border2);}
 .cl-t{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:8px;}
 .cli{display:flex;align-items:flex-start;gap:8px;margin-bottom:5px;font-size:12px;}
-.cli-name{font-weight:700;min-width:110px;}
-.cli-detail{color:var(--text);}
+.cli-name{font-weight:700;min-width:110px;}.cli-detail{color:var(--text);}
 .levels{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border2);}
 .lbox{background:var(--card);padding:10px 14px;}
 .lbox-l{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:3px;}
@@ -88,9 +76,9 @@ body{background:var(--page);color:var(--ink);font-family:system-ui,sans-serif;fo
 .rr-panel{background:#fff;border:1px solid var(--border2);border-radius:10px;padding:10px 14px;margin-top:6px;}
 .rr-title{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:7px;}
 .rr-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:4px;}
-.rr-gain{color:#059669;font-weight:700;}
-.rr-loss{color:#DC2626;font-weight:700;}
+.rr-gain{color:#059669;font-weight:700;}.rr-loss{color:#DC2626;font-weight:700;}
 .rr-ratio{font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;border:1.5px solid #ccc;background:#f5f5f5;}
+.rr-explain{font-size:11px;margin-top:6px;padding:6px 8px;border-radius:6px;display:none;}
 .ask-axiom-btn{display:block;width:100%;margin-top:8px;background:#EFF6FF;color:#1D4ED8;border:1.5px solid #BFDBFE;border-radius:8px;padding:7px;font-size:12px;font-weight:700;cursor:pointer;text-align:center;}
 .ask-axiom-btn:hover{background:#DBEAFE;}
 .chat-btn{position:fixed;bottom:28px;right:28px;background:#059669;color:#fff;border:none;border-radius:50px;padding:14px 22px;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(5,150,105,0.4);z-index:1000;}
@@ -105,23 +93,24 @@ body{background:var(--page);color:var(--ink);font-family:system-ui,sans-serif;fo
 .msg.ai{background:var(--card2);border:1px solid var(--border);align-self:flex-start;}
 .chat-inp{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border);}
 .chat-inp input{flex:1;border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:13px;outline:none;}
-.chat-inp button{background:#059669;color:#fff;border:none;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;}</style>
+.chat-inp button{background:#059669;color:#fff;border:none;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;}
+</style>
 </head><body>
 <div class='topbar'><div class='tbi'>
 <div class='brand'>INVESTOR <span>101</span> - AXIOM US</div>
 <div class='tbr'>
-<div class='tbs'><div class='tbs-l'>Budget</div><div class='tbs-v'>$<input class='budget-input' id='budgetInput' type='number' value='340' onchange='updateBudget(this.value)'/></div></div>
+<div class='tbs'><div class='tbs-l'>Budget</div><div class='tbs-v'>$<input class='budget-input' id='budgetInput' type='number' value='340' oninput='recalcTotals()'/></div></div>
 <div class='tbs'><div class='tbs-l'>Invested</div><div class='tbs-v' id='investedVal'>$0.00</div></div>
-<div class='tbs'><div class='tbs-l'>Cash</div><div class='tbs-v' id='cashVal'>$340.00</div></div>
+<div class='tbs'><div class='tbs-l'>Remaining Cash</div><div class='tbs-v' id='cashVal'>$340.00</div></div>
 <div class='tbs'><div class='tbs-l'>Signals</div><div class='tbs-v'>2 BUY / 5 HOLD</div></div>
-<div style='font-size:11px;color:#9D9690'>Tuesday, March 17 2026 - 02:19 PM ET</div>
+<div style='font-size:11px;color:#9D9690'>Tuesday, March 17 2026 - 02:30 PM ET</div>
 </div></div></div>
 <div class='wrap'>
 <div class='pulse'>
-<div class='pi'><div class='pi-l'>S&amp;P 500 - SPY</div><div class='pi-v' style='color:#059669'>$671.80</div><div class='pi-c' style='color:#059669'>+0.4% today</div></div>
-<div class='pi'><div class='pi-l'>Nasdaq - QQQ</div><div class='pi-v' style='color:#059669'>$604.03</div><div class='pi-c' style='color:#059669'>+0.6% today</div></div>
-<div class='pi'><div class='pi-l'>Oil - USO</div><div class='pi-v'>$118.40</div><div class='pi-c'>+2.9% today</div></div>
-<div class='pi'><div class='pi-l'>Fear Index - VIXY</div><div class='pi-v' style='color:#059669'>$30.63</div><div class='pi-c' style='color:#059669'>GREED</div></div>
+<div class='pi'><div class='pi-l'>S&amp;P 500 - SPY</div><div class='pi-v' style='color:#059669'>$670.94</div><div class='pi-c' style='color:#059669'>+0.3% today</div></div>
+<div class='pi'><div class='pi-l'>Nasdaq - QQQ</div><div class='pi-v' style='color:#059669'>$603.23</div><div class='pi-c' style='color:#059669'>+0.5% today</div></div>
+<div class='pi'><div class='pi-l'>Oil - USO</div><div class='pi-v'>$118.94</div><div class='pi-c'>+3.4% today</div></div>
+<div class='pi'><div class='pi-l'>Fear Index - VIXY</div><div class='pi-v' style='color:#059669'>$30.83</div><div class='pi-c' style='color:#059669'>GREED</div></div>
 </div>
 <div class='regime'>
 <div style='font-size:10px;font-weight:700;color:#9D9690;text-transform:uppercase;margin-bottom:4px'>Market Regime - Rules-Based Signal</div>
@@ -132,756 +121,450 @@ body{background:var(--page);color:var(--ink);font-family:system-ui,sans-serif;fo
 <div class='sb'><div class='sb-l'>Buy Signals</div><div class='sb-v' style='color:#059669'>2</div><div class='sb-s'>rules-verified</div></div>
 <div class='sb'><div class='sb-l'>Hold</div><div class='sb-v' style='color:#D97706'>5</div><div class='sb-s'>watch for entry</div></div>
 <div class='sb'><div class='sb-l'>Invested</div><div class='sb-v' id='investedStat'>$0.00</div><div class='sb-s'>7 positions</div></div>
-<div class='sb'><div class='sb-l'>Cash Reserve</div><div class='sb-v' id='cashStat'>$340.00</div><div class='sb-s'>8% kept safe</div></div>
+<div class='sb'><div class='sb-l'>Remaining Cash</div><div class='sb-v' id='cashStat'>$340.00</div><div class='sb-s'>unallocated</div></div>
 </div>
 <div class='sec-hdr'>
 <div class='sec-t'>Today's Portfolio</div>
-<div class='sec-s'>Click any card to expand. Type your allocation to see risk/reward. Updated 02:19 PM ET</div>
+<div class='sec-s'>Click any card to expand. Enter your dollar amount to see risk/reward. Updated 02:30 PM ET</div>
 </div>
 <div class='grid'><div class='scard' id='card-NVDA' onclick='toggleCard("card-NVDA")'>
-<div class='sc-top'>
-<div>
+<div class='sc-top'><div>
 <div class='sc-sym' style='color:#059669'>NVDA</div>
 <div class='sc-name'>NVIDIA</div>
 <div class='sc-sec'>Technology</div>
-</div>
-<div class='sc-right'>
+</div><div class='sc-right'>
 <div class='verdict' style='background:#F0FDF4;color:#059669;border-color:#059669'>BUY</div>
-<div class='sc-dollar' id='alloc-display-NVDA'>$25.00</div>
+<div class='sc-dollar' id='alloc-display-NVDA'>$0.00</div>
 <div class='sc-pct' id='alloc-pct-NVDA'>7.4% of budget</div>
 </div></div>
 <div class='sc-expand' id='expand-card-NVDA'>▼ Click to expand</div>
 <div class='sc-body' id='body-card-NVDA'>
 <div class='sc-price'>
-<div class='price-val'>$183.30</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+0.0% today</div>
-<div class='range-lbl'>
-<span>52wk low $86.62</span>
-<span>77.0% up</span>
-<span>$212.19 high</span>
-</div>
-<div class='range-track'>
-<div class='range-pin' style='left:calc(77.0% - 4px)'></div>
+<div class='price-val'>$183.06</div>
+<div class='chg' style='background:#FFF1F2;color:#DC2626'>-0.1% today</div>
+<div class='range-lbl'><span>52wk low $86.62</span><span>76.8% up</span><span>$212.19 high</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(76.8% - 4px)'></div></div></div>
+<div class='trace'><div class='trace-t'>Measured Signals - Score: 81.8 / 100</div><div class='score-bars'>
+<div class='sbar'><span class='sbar-l'>Technical</span><div class='sbar-t'><div class='sbar-f' style='width:67%;background:#D97706'></div></div><span class='sbar-v'>26.8/40</span></div>
+<div class='sbar'><span class='sbar-l'>Risk</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>20.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Quality</span><div class='sbar-t'><div class='sbar-f' style='width:90%;background:#059669'></div></div><span class='sbar-v'>18.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Macro</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>10.0/10</span></div>
+<div class='sbar'><span class='sbar-l'>Event</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
 </div></div>
-<div class='trace'>
-<div class='trace-t'>Measured Signals - Score: 81.8 / 100</div>
-<div class='score-bars'>
-<div class='sbar'>
-<span class='sbar-l'>Technical</span>
-<div class='sbar-t'><div class='sbar-f' style='width:67%;background:#D97706'></div></div>
-<span class='sbar-v'>26.8/40</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Risk</span>
-<div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div>
-<span class='sbar-v'>20.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Quality</span>
-<div class='sbar-t'><div class='sbar-f' style='width:90%;background:#059669'></div></div>
-<span class='sbar-v'>18.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Macro</span>
-<div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div>
-<span class='sbar-v'>10.0/10</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Event</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-</div></div>
-<div class='checks'>
-<div class='cl-t'>Guardrail Checks</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>No-Chase Rule</span>
-<span class='cli-detail'>-0.9% from MA20 - safe zone</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>Trend Alignment</span>
-<span class='cli-detail'>MA5/MA10 OK but MA10 < MA20 - mixed</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>52wk Position</span>
-<span class='cli-detail'>77% up from 52wk low - healthy</span>
-</div>
+<div class='checks'><div class='cl-t'>Guardrail Checks</div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>No-Chase Rule</span><span class='cli-detail'>-1.0% from MA20 - safe zone</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>Trend Alignment</span><span class='cli-detail'>MA5/MA10 OK but MA10 < MA20 - mixed</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>52wk Position</span><span class='cli-detail'>77% up from 52wk low - healthy</span></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$182.26-$184.09</div></div>
-<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$168.64</div></div>
-<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$210.79</div></div>
+<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$182.22-$184.05</div></div>
+<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$168.42</div></div>
+<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$210.52</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-row'>
-<span class='alloc-lbl'>My Alloc</span>
-<input class='alloc-inp' id='alloc-inp-NVDA' type='number' min='0' placeholder='$ amount'
-  oninput='updateRR("NVDA",183.3,168.64,210.79)' />
+<span class='alloc-lbl'>My $</span>
+<input class='alloc-inp' id='alloc-inp-NVDA' type='number' min='0' placeholder='Enter amount'
+  oninput='updateRR("NVDA",183.06,168.42,210.52)' />
 <span class='alloc-shares' id='shares-NVDA'></span>
 </div>
 <div class='rr-panel'>
-<div class='rr-title'>Risk / Reward Preview</div>
-<div class='rr-row'><span>💰 Potential Gain (to target)</span><span class='rr-gain' id='rr-gain-NVDA'>-</span></div>
-<div class='rr-row'><span>🛑 Potential Loss (to stop)</span><span class='rr-loss' id='rr-loss-NVDA'>-</span></div>
-<div class='rr-row'><span>📊 Risk:Reward Ratio</span><span class='rr-ratio' id='rr-ratio-NVDA'>-</span></div>
+<div class='rr-title'>Risk / Reward — type a dollar amount above to see your numbers</div>
+<div class='rr-row'><span>💰 Potential gain if price hits target ($210.52)</span><span class='rr-gain' id='rr-gain-NVDA'>enter amount</span></div>
+<div class='rr-row'><span>🛑 Potential loss if price hits stop ($168.42)</span><span class='rr-loss' id='rr-loss-NVDA'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-NVDA'>-</span></div>
+<div class='rr-explain' id='rr-explain-NVDA'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("NVDA","BUY",81.8,183.3,168.64,210.79)'>💬 Ask AXIOM about NVDA</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("NVDA","BUY",81.8,183.06,168.42,210.52)'>💬 Ask AXIOM — should I invest in NVDA?</button>
 </div>
 <div class='sc-ai'>
-<div class='ai-badge'>AI Coach - not the decision engine</div>
-<div class='ai-why'>The model scored NVDA a buy due to its strong technical score of 26.8 and a mixed trend, indicating a potential for growth. Buy 1 share at $410 now, as the current market greed could further drive up the stock price.</div>
-<div class='ai-watch'>Watch: If it breaks above $420, watch for a potential run to $450.</div>
+<div class='ai-badge'>AI Coach — plain English explanation</div>
+<div class='ai-why'>NVDA scored high because its price has been steadily climbing and the company is very profitable. You could buy 1 share at $183 today, but wait for the price to dip to $170 first to get a better deal.</div>
+<div class='ai-watch'>⚠️ Watch: If the price drops below $168, that is your stop loss (meaning you should sell to protect yourself from bigger losses), so be ready to act fast to limit your losses.</div>
 </div>
 <div class='sc-mas'>
-<span class='ma'>MA5 <strong>$183.17</strong></span>
-<span class='ma'>MA10 <strong>$182.74</strong></span>
-<span class='ma'>MA20 <strong>$184.88</strong></span>
+<span class='ma'>MA5 <strong>$183.13</strong></span>
+<span class='ma'>MA10 <strong>$182.72</strong></span>
+<span class='ma'>MA20 <strong>$184.87</strong></span>
 </div>
-</div>
-</div>
+</div></div>
 <div class='scard' id='card-COP' onclick='toggleCard("card-COP")'>
-<div class='sc-top'>
-<div>
+<div class='sc-top'><div>
 <div class='sc-sym' style='color:#059669'>COP</div>
 <div class='sc-name'>ConocoPhillips</div>
 <div class='sc-sec'>Energy</div>
-</div>
-<div class='sc-right'>
+</div><div class='sc-right'>
 <div class='verdict' style='background:#F0FDF4;color:#059669;border-color:#059669'>BUY</div>
-<div class='sc-dollar' id='alloc-display-COP'>$25.00</div>
+<div class='sc-dollar' id='alloc-display-COP'>$0.00</div>
 <div class='sc-pct' id='alloc-pct-COP'>7.4% of budget</div>
 </div></div>
 <div class='sc-expand' id='expand-card-COP'>▼ Click to expand</div>
 <div class='sc-body' id='body-card-COP'>
 <div class='sc-price'>
-<div class='price-val'>$123.52</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+1.8% today</div>
-<div class='range-lbl'>
-<span>52wk low $79.88</span>
-<span>102.4% up</span>
-<span>$122.50 high</span>
-</div>
-<div class='range-track'>
-<div class='range-pin' style='left:calc(102.4% - 4px)'></div>
+<div class='price-val'>$123.57</div>
+<div class='chg' style='background:#F0FDF4;color:#059669'>+1.9% today</div>
+<div class='range-lbl'><span>52wk low $79.88</span><span>102.5% up</span><span>$122.50 high</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(102.5% - 4px)'></div></div></div>
+<div class='trace'><div class='trace-t'>Measured Signals - Score: 82.6 / 100</div><div class='score-bars'>
+<div class='sbar'><span class='sbar-l'>Technical</span><div class='sbar-t'><div class='sbar-f' style='width:74%;background:#059669'></div></div><span class='sbar-v'>29.6/40</span></div>
+<div class='sbar'><span class='sbar-l'>Risk</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>20.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Quality</span><div class='sbar-t'><div class='sbar-f' style='width:95%;background:#059669'></div></div><span class='sbar-v'>19.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Macro</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
+<div class='sbar'><span class='sbar-l'>Event</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
 </div></div>
-<div class='trace'>
-<div class='trace-t'>Measured Signals - Score: 82.6 / 100</div>
-<div class='score-bars'>
-<div class='sbar'>
-<span class='sbar-l'>Technical</span>
-<div class='sbar-t'><div class='sbar-f' style='width:74%;background:#059669'></div></div>
-<span class='sbar-v'>29.6/40</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Risk</span>
-<div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div>
-<span class='sbar-v'>20.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Quality</span>
-<div class='sbar-t'><div class='sbar-f' style='width:95%;background:#059669'></div></div>
-<span class='sbar-v'>19.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Macro</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Event</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-</div></div>
-<div class='checks'>
-<div class='cl-t'>Guardrail Checks</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>No-Chase Rule</span>
-<span class='cli-detail'>+7.0% above MA20 - caution</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>Trend Alignment</span>
-<span class='cli-detail'>MA5 120.80 > MA10 118.47 > MA20 115.44 - bull</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>52wk Position</span>
-<span class='cli-detail'>Near 52wk high (122.50) - elevated risk</span>
-</div>
+<div class='checks'><div class='cl-t'>Guardrail Checks</div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>No-Chase Rule</span><span class='cli-detail'>+7.0% above MA20 - caution</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>Trend Alignment</span><span class='cli-detail'>MA5 120.81 > MA10 118.47 > MA20 115.44 - bull</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>52wk Position</span><span class='cli-detail'>Near 52wk high (122.50) - elevated risk</span></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$123.15-$123.89</div></div>
-<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$113.64</div></div>
-<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$142.05</div></div>
+<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$123.20-$123.94</div></div>
+<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$113.68</div></div>
+<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$142.11</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-row'>
-<span class='alloc-lbl'>My Alloc</span>
-<input class='alloc-inp' id='alloc-inp-COP' type='number' min='0' placeholder='$ amount'
-  oninput='updateRR("COP",123.52,113.64,142.05)' />
+<span class='alloc-lbl'>My $</span>
+<input class='alloc-inp' id='alloc-inp-COP' type='number' min='0' placeholder='Enter amount'
+  oninput='updateRR("COP",123.57,113.68,142.11)' />
 <span class='alloc-shares' id='shares-COP'></span>
 </div>
 <div class='rr-panel'>
-<div class='rr-title'>Risk / Reward Preview</div>
-<div class='rr-row'><span>💰 Potential Gain (to target)</span><span class='rr-gain' id='rr-gain-COP'>-</span></div>
-<div class='rr-row'><span>🛑 Potential Loss (to stop)</span><span class='rr-loss' id='rr-loss-COP'>-</span></div>
-<div class='rr-row'><span>📊 Risk:Reward Ratio</span><span class='rr-ratio' id='rr-ratio-COP'>-</span></div>
+<div class='rr-title'>Risk / Reward — type a dollar amount above to see your numbers</div>
+<div class='rr-row'><span>💰 Potential gain if price hits target ($142.11)</span><span class='rr-gain' id='rr-gain-COP'>enter amount</span></div>
+<div class='rr-row'><span>🛑 Potential loss if price hits stop ($113.68)</span><span class='rr-loss' id='rr-loss-COP'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-COP'>-</span></div>
+<div class='rr-explain' id='rr-explain-COP'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("COP","BUY",82.6,123.52,113.64,142.05)'>💬 Ask AXIOM about COP</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("COP","BUY",82.6,123.57,113.68,142.11)'>💬 Ask AXIOM — should I invest in COP?</button>
 </div>
 <div class='sc-ai'>
-<div class='ai-badge'>AI Coach - not the decision engine</div>
-<div class='ai-why'>The model scored COP a buy with a high technical score of 29.6 and a bull trend, driven by the energy sector's recent surge. Wait for a dip to $110 before entering, as the current price may be overextended.</div>
-<div class='ai-watch'>Watch: Watch the oil price, if it hits $100, COP's stock could see a significant boost.</div>
+<div class='ai-badge'>AI Coach — plain English explanation</div>
+<div class='ai-why'>COP is a good buy because the energy sector is doing well and the company has a strong trend. You could invest $1000 in COP today at $123.57 per share, which would get you about 8 shares.</div>
+<div class='ai-watch'>⚠️ Watch: Earnings are reported soon, so if results disappoint, the price could drop quickly, so be prepared to sell if the company doesn't meet expectations.</div>
 </div>
 <div class='sc-mas'>
-<span class='ma'>MA5 <strong>$120.80</strong></span>
+<span class='ma'>MA5 <strong>$120.81</strong></span>
 <span class='ma'>MA10 <strong>$118.47</strong></span>
 <span class='ma'>MA20 <strong>$115.44</strong></span>
 </div>
-</div>
-</div>
-<div class='scard' id='card-SNOW' onclick='toggleCard("card-SNOW")'>
-<div class='sc-top'>
-<div>
-<div class='sc-sym' style='color:#D97706'>SNOW</div>
-<div class='sc-name'>Snowflake</div>
-<div class='sc-sec'>Technology</div>
-</div>
-<div class='sc-right'>
-<div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div class='sc-dollar' id='alloc-display-SNOW'>$16.00</div>
-<div class='sc-pct' id='alloc-pct-SNOW'>4.6% of budget</div>
 </div></div>
-<div class='sc-expand' id='expand-card-SNOW'>▼ Click to expand</div>
-<div class='sc-body' id='body-card-SNOW'>
-<div class='sc-price'>
-<div class='price-val'>$174.71</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+0.2% today</div>
-<div class='range-lbl'>
-<span>52wk low $120.10</span>
-<span>34.0% up</span>
-<span>$280.67 high</span>
-</div>
-<div class='range-track'>
-<div class='range-pin' style='left:calc(34.0% - 4px)'></div>
-</div></div>
-<div class='trace'>
-<div class='trace-t'>Measured Signals - Score: 79.3 / 100</div>
-<div class='score-bars'>
-<div class='sbar'>
-<span class='sbar-l'>Technical</span>
-<div class='sbar-t'><div class='sbar-f' style='width:74%;background:#059669'></div></div>
-<span class='sbar-v'>29.8/40</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Risk</span>
-<div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div>
-<span class='sbar-v'>20.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Quality</span>
-<div class='sbar-t'><div class='sbar-f' style='width:62%;background:#D97706'></div></div>
-<span class='sbar-v'>12.5/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Macro</span>
-<div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div>
-<span class='sbar-v'>10.0/10</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Event</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-</div></div>
-<div class='checks'>
-<div class='cl-t'>Guardrail Checks</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>No-Chase Rule</span>
-<span class='cli-detail'>+0.9% from MA20 - safe zone</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>Trend Alignment</span>
-<span class='cli-detail'>MA5 176.90 > MA10 176.88 > MA20 173.10 - bull</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>52wk Position</span>
-<span class='cli-detail'>34% up from 52wk low - healthy</span>
-</div>
-</div>
-<div class='levels'>
-<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$176.02-$177.78</div></div>
-<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$160.73</div></div>
-<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$200.92</div></div>
-</div>
-<div class='alloc-section' onclick='event.stopPropagation()'>
-<div class='alloc-row'>
-<span class='alloc-lbl'>My Alloc</span>
-<input class='alloc-inp' id='alloc-inp-SNOW' type='number' min='0' placeholder='$ amount'
-  oninput='updateRR("SNOW",174.71,160.73,200.92)' />
-<span class='alloc-shares' id='shares-SNOW'></span>
-</div>
-<div class='rr-panel'>
-<div class='rr-title'>Risk / Reward Preview</div>
-<div class='rr-row'><span>💰 Potential Gain (to target)</span><span class='rr-gain' id='rr-gain-SNOW'>-</span></div>
-<div class='rr-row'><span>🛑 Potential Loss (to stop)</span><span class='rr-loss' id='rr-loss-SNOW'>-</span></div>
-<div class='rr-row'><span>📊 Risk:Reward Ratio</span><span class='rr-ratio' id='rr-ratio-SNOW'>-</span></div>
-</div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("SNOW","HOLD",79.3,174.71,160.73,200.92)'>💬 Ask AXIOM about SNOW</button>
-</div>
-<div class='sc-ai'>
-<div class='ai-badge'>AI Coach - not the decision engine</div>
-<div class='ai-why'>The model scored SNOW a hold due to its high technical score of 29.8, but a relatively low quality score of 12.5, indicating potential overvaluation. Hold, do not add more yet, as the stock's growth may be priced in already.</div>
-<div class='ai-watch'>Watch: If the stock pulls back to $250, consider adding to your position.</div>
-</div>
-<div class='sc-mas'>
-<span class='ma'>MA5 <strong>$176.90</strong></span>
-<span class='ma'>MA10 <strong>$176.88</strong></span>
-<span class='ma'>MA20 <strong>$173.10</strong></span>
-</div>
-</div>
-</div>
 <div class='scard' id='card-CVX' onclick='toggleCard("card-CVX")'>
-<div class='sc-top'>
-<div>
+<div class='sc-top'><div>
 <div class='sc-sym' style='color:#D97706'>CVX</div>
 <div class='sc-name'>Chevron</div>
 <div class='sc-sec'>Energy</div>
-</div>
-<div class='sc-right'>
+</div><div class='sc-right'>
 <div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div class='sc-dollar' id='alloc-display-CVX'>$16.00</div>
+<div class='sc-dollar' id='alloc-display-CVX'>$0.00</div>
 <div class='sc-pct' id='alloc-pct-CVX'>4.6% of budget</div>
 </div></div>
 <div class='sc-expand' id='expand-card-CVX'>▼ Click to expand</div>
 <div class='sc-body' id='body-card-CVX'>
 <div class='sc-price'>
-<div class='price-val'>$198.71</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+0.9% today</div>
-<div class='range-lbl'>
-<span>52wk low $132.04</span>
-<span>99.7% up</span>
-<span>$198.88 high</span>
-</div>
-<div class='range-track'>
-<div class='range-pin' style='left:calc(99.7% - 4px)'></div>
+<div class='price-val'>$198.82</div>
+<div class='chg' style='background:#F0FDF4;color:#059669'>+1.0% today</div>
+<div class='range-lbl'><span>52wk low $132.04</span><span>99.9% up</span><span>$198.88 high</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(99.9% - 4px)'></div></div></div>
+<div class='trace'><div class='trace-t'>Measured Signals - Score: 78.1 / 100</div><div class='score-bars'>
+<div class='sbar'><span class='sbar-l'>Technical</span><div class='sbar-t'><div class='sbar-f' style='width:74%;background:#059669'></div></div><span class='sbar-v'>29.6/40</span></div>
+<div class='sbar'><span class='sbar-l'>Risk</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>20.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Quality</span><div class='sbar-t'><div class='sbar-f' style='width:72%;background:#059669'></div></div><span class='sbar-v'>14.5/20</span></div>
+<div class='sbar'><span class='sbar-l'>Macro</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
+<div class='sbar'><span class='sbar-l'>Event</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
 </div></div>
-<div class='trace'>
-<div class='trace-t'>Measured Signals - Score: 78.1 / 100</div>
-<div class='score-bars'>
-<div class='sbar'>
-<span class='sbar-l'>Technical</span>
-<div class='sbar-t'><div class='sbar-f' style='width:74%;background:#059669'></div></div>
-<span class='sbar-v'>29.6/40</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Risk</span>
-<div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div>
-<span class='sbar-v'>20.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Quality</span>
-<div class='sbar-t'><div class='sbar-f' style='width:72%;background:#059669'></div></div>
-<span class='sbar-v'>14.5/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Macro</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Event</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-</div></div>
-<div class='checks'>
-<div class='cl-t'>Guardrail Checks</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>No-Chase Rule</span>
-<span class='cli-detail'>+5.2% above MA20 - caution</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>Trend Alignment</span>
-<span class='cli-detail'>MA5 196.22 > MA10 192.27 > MA20 188.95 - bull</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>52wk Position</span>
-<span class='cli-detail'>Near 52wk high (198.88) - elevated risk</span>
-</div>
+<div class='checks'><div class='cl-t'>Guardrail Checks</div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>No-Chase Rule</span><span class='cli-detail'>+5.2% above MA20 - caution</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>Trend Alignment</span><span class='cli-detail'>MA5 196.25 > MA10 192.28 > MA20 188.96 - bull</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>52wk Position</span><span class='cli-detail'>Near 52wk high (198.88) - elevated risk</span></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$198.11-$199.31</div></div>
-<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$182.81</div></div>
-<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$228.52</div></div>
+<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$198.22-$199.42</div></div>
+<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$182.91</div></div>
+<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$228.64</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-row'>
-<span class='alloc-lbl'>My Alloc</span>
-<input class='alloc-inp' id='alloc-inp-CVX' type='number' min='0' placeholder='$ amount'
-  oninput='updateRR("CVX",198.71,182.81,228.52)' />
+<span class='alloc-lbl'>My $</span>
+<input class='alloc-inp' id='alloc-inp-CVX' type='number' min='0' placeholder='Enter amount'
+  oninput='updateRR("CVX",198.82,182.91,228.64)' />
 <span class='alloc-shares' id='shares-CVX'></span>
 </div>
 <div class='rr-panel'>
-<div class='rr-title'>Risk / Reward Preview</div>
-<div class='rr-row'><span>💰 Potential Gain (to target)</span><span class='rr-gain' id='rr-gain-CVX'>-</span></div>
-<div class='rr-row'><span>🛑 Potential Loss (to stop)</span><span class='rr-loss' id='rr-loss-CVX'>-</span></div>
-<div class='rr-row'><span>📊 Risk:Reward Ratio</span><span class='rr-ratio' id='rr-ratio-CVX'>-</span></div>
+<div class='rr-title'>Risk / Reward — type a dollar amount above to see your numbers</div>
+<div class='rr-row'><span>💰 Potential gain if price hits target ($228.64)</span><span class='rr-gain' id='rr-gain-CVX'>enter amount</span></div>
+<div class='rr-row'><span>🛑 Potential loss if price hits stop ($182.91)</span><span class='rr-loss' id='rr-loss-CVX'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-CVX'>-</span></div>
+<div class='rr-explain' id='rr-explain-CVX'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("CVX","HOLD",78.1,198.71,182.81,228.52)'>💬 Ask AXIOM about CVX</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("CVX","HOLD",78.1,198.82,182.91,228.64)'>💬 Ask AXIOM — should I invest in CVX?</button>
 </div>
 <div class='sc-ai'>
-<div class='ai-badge'>AI Coach - not the decision engine</div>
-<div class='ai-why'>The model scored CVX a hold with a strong technical score of 29.6 and a bull trend, but a relatively low macro score of 7.0, indicating potential external risks. Hold, as the energy sector's momentum may continue to drive the stock price up.</div>
-<div class='ai-watch'>Watch: Watch for any news on Chevron's potential acquisition of a 30% stake in Ipiranga, which could impact the stock price.</div>
+<div class='ai-badge'>AI Coach — plain English explanation</div>
+<div class='ai-why'>CVX is a hold because the company is doing well, but the price is already high. You could hold off on buying more shares until the price dips below $190 to get a better deal.</div>
+<div class='ai-watch'>⚠️ Watch: If Chevron's negotiations to buy a stake in Ipiranga are successful, the price could rise, so be ready to buy more shares if the deal goes through.</div>
 </div>
 <div class='sc-mas'>
-<span class='ma'>MA5 <strong>$196.22</strong></span>
-<span class='ma'>MA10 <strong>$192.27</strong></span>
-<span class='ma'>MA20 <strong>$188.95</strong></span>
+<span class='ma'>MA5 <strong>$196.25</strong></span>
+<span class='ma'>MA10 <strong>$192.28</strong></span>
+<span class='ma'>MA20 <strong>$188.96</strong></span>
 </div>
-</div>
-</div>
+</div></div>
 <div class='scard' id='card-GOOGL' onclick='toggleCard("card-GOOGL")'>
-<div class='sc-top'>
-<div>
+<div class='sc-top'><div>
 <div class='sc-sym' style='color:#D97706'>GOOGL</div>
 <div class='sc-name'>Alphabet</div>
 <div class='sc-sec'>Technology</div>
-</div>
-<div class='sc-right'>
+</div><div class='sc-right'>
 <div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div class='sc-dollar' id='alloc-display-GOOGL'>$10.00</div>
+<div class='sc-dollar' id='alloc-display-GOOGL'>$0.00</div>
 <div class='sc-pct' id='alloc-pct-GOOGL'>3.0% of budget</div>
 </div></div>
 <div class='sc-expand' id='expand-card-GOOGL'>▼ Click to expand</div>
 <div class='sc-body' id='body-card-GOOGL'>
 <div class='sc-price'>
-<div class='price-val'>$309.57</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+1.3% today</div>
-<div class='range-lbl'>
-<span>52wk low $140.53</span>
-<span>81.1% up</span>
-<span>$349.00 high</span>
-</div>
-<div class='range-track'>
-<div class='range-pin' style='left:calc(81.1% - 4px)'></div>
+<div class='price-val'>$309.29</div>
+<div class='chg' style='background:#F0FDF4;color:#059669'>+1.2% today</div>
+<div class='range-lbl'><span>52wk low $140.53</span><span>81.0% up</span><span>$349.00 high</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(81.0% - 4px)'></div></div></div>
+<div class='trace'><div class='trace-t'>Measured Signals - Score: 70.8 / 100</div><div class='score-bars'>
+<div class='sbar'><span class='sbar-l'>Technical</span><div class='sbar-t'><div class='sbar-f' style='width:67%;background:#D97706'></div></div><span class='sbar-v'>26.8/40</span></div>
+<div class='sbar'><span class='sbar-l'>Risk</span><div class='sbar-t'><div class='sbar-f' style='width:40%;background:#DC2626'></div></div><span class='sbar-v'>8.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Quality</span><div class='sbar-t'><div class='sbar-f' style='width:95%;background:#059669'></div></div><span class='sbar-v'>19.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Macro</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>10.0/10</span></div>
+<div class='sbar'><span class='sbar-l'>Event</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
 </div></div>
-<div class='trace'>
-<div class='trace-t'>Measured Signals - Score: 70.8 / 100</div>
-<div class='score-bars'>
-<div class='sbar'>
-<span class='sbar-l'>Technical</span>
-<div class='sbar-t'><div class='sbar-f' style='width:67%;background:#D97706'></div></div>
-<span class='sbar-v'>26.8/40</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Risk</span>
-<div class='sbar-t'><div class='sbar-f' style='width:40%;background:#DC2626'></div></div>
-<span class='sbar-v'>8.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Quality</span>
-<div class='sbar-t'><div class='sbar-f' style='width:95%;background:#059669'></div></div>
-<span class='sbar-v'>19.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Macro</span>
-<div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div>
-<span class='sbar-v'>10.0/10</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Event</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-</div></div>
-<div class='checks'>
-<div class='cl-t'>Guardrail Checks</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>No-Chase Rule</span>
-<span class='cli-detail'>+1.0% from MA20 - safe zone</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>Trend Alignment</span>
-<span class='cli-detail'>MA5/MA10 OK but MA10 < MA20 - mixed</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>52wk Position</span>
-<span class='cli-detail'>81% up from 52wk low - healthy</span>
-</div>
+<div class='checks'><div class='cl-t'>Guardrail Checks</div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>No-Chase Rule</span><span class='cli-detail'>+0.9% from MA20 - safe zone</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>Trend Alignment</span><span class='cli-detail'>MA5/MA10 OK but MA10 < MA20 - mixed</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>52wk Position</span><span class='cli-detail'>81% up from 52wk low - healthy</span></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$308.64-$310.50</div></div>
-<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$284.80</div></div>
-<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$356.01</div></div>
+<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$308.36-$310.22</div></div>
+<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$284.55</div></div>
+<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$355.68</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-row'>
-<span class='alloc-lbl'>My Alloc</span>
-<input class='alloc-inp' id='alloc-inp-GOOGL' type='number' min='0' placeholder='$ amount'
-  oninput='updateRR("GOOGL",309.57,284.8,356.01)' />
+<span class='alloc-lbl'>My $</span>
+<input class='alloc-inp' id='alloc-inp-GOOGL' type='number' min='0' placeholder='Enter amount'
+  oninput='updateRR("GOOGL",309.29,284.55,355.68)' />
 <span class='alloc-shares' id='shares-GOOGL'></span>
 </div>
 <div class='rr-panel'>
-<div class='rr-title'>Risk / Reward Preview</div>
-<div class='rr-row'><span>💰 Potential Gain (to target)</span><span class='rr-gain' id='rr-gain-GOOGL'>-</span></div>
-<div class='rr-row'><span>🛑 Potential Loss (to stop)</span><span class='rr-loss' id='rr-loss-GOOGL'>-</span></div>
-<div class='rr-row'><span>📊 Risk:Reward Ratio</span><span class='rr-ratio' id='rr-ratio-GOOGL'>-</span></div>
+<div class='rr-title'>Risk / Reward — type a dollar amount above to see your numbers</div>
+<div class='rr-row'><span>💰 Potential gain if price hits target ($355.68)</span><span class='rr-gain' id='rr-gain-GOOGL'>enter amount</span></div>
+<div class='rr-row'><span>🛑 Potential loss if price hits stop ($284.55)</span><span class='rr-loss' id='rr-loss-GOOGL'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-GOOGL'>-</span></div>
+<div class='rr-explain' id='rr-explain-GOOGL'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("GOOGL","HOLD",70.8,309.57,284.8,356.01)'>💬 Ask AXIOM about GOOGL</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("GOOGL","HOLD",70.8,309.29,284.55,355.68)'>💬 Ask AXIOM — should I invest in GOOGL?</button>
 </div>
 <div class='sc-ai'>
-<div class='ai-badge'>AI Coach - not the decision engine</div>
-<div class='ai-why'>The model scored GOOGL a hold due to its mixed trend and relatively low score of 71.0, indicating a potential for consolidation. Wait for a clearer trend to emerge before making a move, as the current price may not offer a compelling entry point.</div>
-<div class='ai-watch'>Watch: If the stock breaks above $2800, watch for a potential run to $3000.</div>
+<div class='ai-badge'>AI Coach — plain English explanation</div>
+<div class='ai-why'>GOOGL is a hold because the company is doing well, but the price is already very high. You could hold off on buying more shares until the price dips below $300 to get a better deal.</div>
+<div class='ai-watch'>⚠️ Watch: If Google's AI investments pay off, the price could rise, so be ready to buy more shares if the company announces successful AI projects.</div>
 </div>
 <div class='sc-mas'>
-<span class='ma'>MA5 <strong>$305.92</strong></span>
-<span class='ma'>MA10 <strong>$304.49</strong></span>
-<span class='ma'>MA20 <strong>$306.42</strong></span>
+<span class='ma'>MA5 <strong>$305.87</strong></span>
+<span class='ma'>MA10 <strong>$304.46</strong></span>
+<span class='ma'>MA20 <strong>$306.41</strong></span>
 </div>
+</div></div>
+<div class='scard' id='card-CRWD' onclick='toggleCard("card-CRWD")'>
+<div class='sc-top'><div>
+<div class='sc-sym' style='color:#D97706'>CRWD</div>
+<div class='sc-name'>CrowdStrike</div>
+<div class='sc-sec'>Technology</div>
+</div><div class='sc-right'>
+<div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
+<div class='sc-dollar' id='alloc-display-CRWD'>$0.00</div>
+<div class='sc-pct' id='alloc-pct-CRWD'>3.0% of budget</div>
+</div></div>
+<div class='sc-expand' id='expand-card-CRWD'>▼ Click to expand</div>
+<div class='sc-body' id='body-card-CRWD'>
+<div class='sc-price'>
+<div class='price-val'>$430.71</div>
+<div class='chg' style='background:#F0FDF4;color:#059669'>+1.6% today</div>
+<div class='range-lbl'><span>52wk low $298.00</span><span>49.4% up</span><span>$566.90 high</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(49.4% - 4px)'></div></div></div>
+<div class='trace'><div class='trace-t'>Measured Signals - Score: 71.1 / 100</div><div class='score-bars'>
+<div class='sbar'><span class='sbar-l'>Technical</span><div class='sbar-t'><div class='sbar-f' style='width:66%;background:#D97706'></div></div><span class='sbar-v'>26.6/40</span></div>
+<div class='sbar'><span class='sbar-l'>Risk</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>14.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Quality</span><div class='sbar-t'><div class='sbar-f' style='width:67%;background:#D97706'></div></div><span class='sbar-v'>13.5/20</span></div>
+<div class='sbar'><span class='sbar-l'>Macro</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>10.0/10</span></div>
+<div class='sbar'><span class='sbar-l'>Event</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
+</div></div>
+<div class='checks'><div class='cl-t'>Guardrail Checks</div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>No-Chase Rule</span><span class='cli-detail'>+5.9% above MA20 - caution</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>Trend Alignment</span><span class='cli-detail'>MA5 435.95 > MA10 431.31 > MA20 406.64 - bull</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>52wk Position</span><span class='cli-detail'>49% up from 52wk low - healthy</span></div>
 </div>
+<div class='levels'>
+<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$433.77-$438.13</div></div>
+<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$396.25</div></div>
+<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$495.32</div></div>
 </div>
+<div class='alloc-section' onclick='event.stopPropagation()'>
+<div class='alloc-row'>
+<span class='alloc-lbl'>My $</span>
+<input class='alloc-inp' id='alloc-inp-CRWD' type='number' min='0' placeholder='Enter amount'
+  oninput='updateRR("CRWD",430.71,396.25,495.32)' />
+<span class='alloc-shares' id='shares-CRWD'></span>
+</div>
+<div class='rr-panel'>
+<div class='rr-title'>Risk / Reward — type a dollar amount above to see your numbers</div>
+<div class='rr-row'><span>💰 Potential gain if price hits target ($495.32)</span><span class='rr-gain' id='rr-gain-CRWD'>enter amount</span></div>
+<div class='rr-row'><span>🛑 Potential loss if price hits stop ($396.25)</span><span class='rr-loss' id='rr-loss-CRWD'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-CRWD'>-</span></div>
+<div class='rr-explain' id='rr-explain-CRWD'></div>
+</div>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("CRWD","HOLD",71.1,430.71,396.25,495.32)'>💬 Ask AXIOM — should I invest in CRWD?</button>
+</div>
+<div class='sc-ai'>
+<div class='ai-badge'>AI Coach — plain English explanation</div>
+<div class='ai-why'>CRWD is a hold because the company is doing well, but the price is already very high. You could hold off on buying more shares until the price dips below $420 to get a better deal.</div>
+<div class='ai-watch'>⚠️ Watch: If the company's AI products take off, the price could rise quickly, so be ready to buy more shares if the company announces successful product launches.</div>
+</div>
+<div class='sc-mas'>
+<span class='ma'>MA5 <strong>$435.95</strong></span>
+<span class='ma'>MA10 <strong>$431.31</strong></span>
+<span class='ma'>MA20 <strong>$406.64</strong></span>
+</div>
+</div></div>
 <div class='scard' id='card-XOM' onclick='toggleCard("card-XOM")'>
-<div class='sc-top'>
-<div>
+<div class='sc-top'><div>
 <div class='sc-sym' style='color:#D97706'>XOM</div>
 <div class='sc-name'>ExxonMobil</div>
 <div class='sc-sec'>Energy</div>
-</div>
-<div class='sc-right'>
+</div><div class='sc-right'>
 <div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div class='sc-dollar' id='alloc-display-XOM'>$10.00</div>
+<div class='sc-dollar' id='alloc-display-XOM'>$0.00</div>
 <div class='sc-pct' id='alloc-pct-XOM'>3.0% of budget</div>
 </div></div>
 <div class='sc-expand' id='expand-card-XOM'>▼ Click to expand</div>
 <div class='sc-body' id='body-card-XOM'>
 <div class='sc-price'>
-<div class='price-val'>$159.53</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+1.5% today</div>
-<div class='range-lbl'>
-<span>52wk low $97.80</span>
-<span>99.9% up</span>
-<span>$159.61 high</span>
-</div>
-<div class='range-track'>
-<div class='range-pin' style='left:calc(99.9% - 4px)'></div>
+<div class='price-val'>$159.51</div>
+<div class='chg' style='background:#F0FDF4;color:#059669'>+1.4% today</div>
+<div class='range-lbl'><span>52wk low $97.80</span><span>99.8% up</span><span>$159.61 high</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(99.8% - 4px)'></div></div></div>
+<div class='trace'><div class='trace-t'>Measured Signals - Score: 67.1 / 100</div><div class='score-bars'>
+<div class='sbar'><span class='sbar-l'>Technical</span><div class='sbar-t'><div class='sbar-f' style='width:74%;background:#059669'></div></div><span class='sbar-v'>29.6/40</span></div>
+<div class='sbar'><span class='sbar-l'>Risk</span><div class='sbar-t'><div class='sbar-f' style='width:40%;background:#DC2626'></div></div><span class='sbar-v'>8.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Quality</span><div class='sbar-t'><div class='sbar-f' style='width:77%;background:#059669'></div></div><span class='sbar-v'>15.5/20</span></div>
+<div class='sbar'><span class='sbar-l'>Macro</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
+<div class='sbar'><span class='sbar-l'>Event</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
 </div></div>
-<div class='trace'>
-<div class='trace-t'>Measured Signals - Score: 67.1 / 100</div>
-<div class='score-bars'>
-<div class='sbar'>
-<span class='sbar-l'>Technical</span>
-<div class='sbar-t'><div class='sbar-f' style='width:74%;background:#059669'></div></div>
-<span class='sbar-v'>29.6/40</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Risk</span>
-<div class='sbar-t'><div class='sbar-f' style='width:40%;background:#DC2626'></div></div>
-<span class='sbar-v'>8.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Quality</span>
-<div class='sbar-t'><div class='sbar-f' style='width:77%;background:#059669'></div></div>
-<span class='sbar-v'>15.5/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Macro</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Event</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-</div></div>
-<div class='checks'>
-<div class='cl-t'>Guardrail Checks</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>No-Chase Rule</span>
-<span class='cli-detail'>+5.2% above MA20 - caution</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>Trend Alignment</span>
-<span class='cli-detail'>MA5 155.59 > MA10 152.83 > MA20 151.67 - bull</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>52wk Position</span>
-<span class='cli-detail'>Near 52wk high (159.61) - elevated risk</span>
-</div>
+<div class='checks'><div class='cl-t'>Guardrail Checks</div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>No-Chase Rule</span><span class='cli-detail'>+5.2% above MA20 - caution</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>Trend Alignment</span><span class='cli-detail'>MA5 155.58 > MA10 152.82 > MA20 151.67 - bull</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>52wk Position</span><span class='cli-detail'>Near 52wk high (159.61) - elevated risk</span></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$159.05-$160.01</div></div>
-<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$146.77</div></div>
-<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$183.46</div></div>
+<div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$159.03-$159.99</div></div>
+<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$146.75</div></div>
+<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$183.44</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-row'>
-<span class='alloc-lbl'>My Alloc</span>
-<input class='alloc-inp' id='alloc-inp-XOM' type='number' min='0' placeholder='$ amount'
-  oninput='updateRR("XOM",159.53,146.77,183.46)' />
+<span class='alloc-lbl'>My $</span>
+<input class='alloc-inp' id='alloc-inp-XOM' type='number' min='0' placeholder='Enter amount'
+  oninput='updateRR("XOM",159.51,146.75,183.44)' />
 <span class='alloc-shares' id='shares-XOM'></span>
 </div>
 <div class='rr-panel'>
-<div class='rr-title'>Risk / Reward Preview</div>
-<div class='rr-row'><span>💰 Potential Gain (to target)</span><span class='rr-gain' id='rr-gain-XOM'>-</span></div>
-<div class='rr-row'><span>🛑 Potential Loss (to stop)</span><span class='rr-loss' id='rr-loss-XOM'>-</span></div>
-<div class='rr-row'><span>📊 Risk:Reward Ratio</span><span class='rr-ratio' id='rr-ratio-XOM'>-</span></div>
+<div class='rr-title'>Risk / Reward — type a dollar amount above to see your numbers</div>
+<div class='rr-row'><span>💰 Potential gain if price hits target ($183.44)</span><span class='rr-gain' id='rr-gain-XOM'>enter amount</span></div>
+<div class='rr-row'><span>🛑 Potential loss if price hits stop ($146.75)</span><span class='rr-loss' id='rr-loss-XOM'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-XOM'>-</span></div>
+<div class='rr-explain' id='rr-explain-XOM'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("XOM","HOLD",67.1,159.53,146.77,183.46)'>💬 Ask AXIOM about XOM</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("XOM","HOLD",67.1,159.51,146.75,183.44)'>💬 Ask AXIOM — should I invest in XOM?</button>
 </div>
 <div class='sc-ai'>
-<div class='ai-badge'>AI Coach - not the decision engine</div>
-<div class='ai-why'>The model scored XOM a hold with a strong technical score of 29.6, but a relatively low score of 67.0, indicating potential risks. Hold, as the energy sector's momentum may continue to drive the stock price up, but be cautious of potential pullbacks.</div>
-<div class='ai-watch'>Watch: If the stock pulls back to $90, consider adding to your position.</div>
+<div class='ai-badge'>AI Coach — plain English explanation</div>
+<div class='ai-why'>XOM is a hold because the company is doing well, but the price is already high. You could hold off on buying more shares until the price dips below $155 to get a better deal.</div>
+<div class='ai-watch'>⚠️ Watch: If oil prices rise above $100, the price of XOM could rise quickly, so be ready to buy more shares if oil prices surge.</div>
 </div>
 <div class='sc-mas'>
-<span class='ma'>MA5 <strong>$155.59</strong></span>
-<span class='ma'>MA10 <strong>$152.83</strong></span>
+<span class='ma'>MA5 <strong>$155.58</strong></span>
+<span class='ma'>MA10 <strong>$152.82</strong></span>
 <span class='ma'>MA20 <strong>$151.67</strong></span>
 </div>
-</div>
-</div>
+</div></div>
 <div class='scard' id='card-OXY' onclick='toggleCard("card-OXY")'>
-<div class='sc-top'>
-<div>
+<div class='sc-top'><div>
 <div class='sc-sym' style='color:#D97706'>OXY</div>
 <div class='sc-name'>Occidental</div>
 <div class='sc-sec'>Energy</div>
-</div>
-<div class='sc-right'>
+</div><div class='sc-right'>
 <div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div class='sc-dollar' id='alloc-display-OXY'>$10.00</div>
+<div class='sc-dollar' id='alloc-display-OXY'>$0.00</div>
 <div class='sc-pct' id='alloc-pct-OXY'>3.0% of budget</div>
 </div></div>
 <div class='sc-expand' id='expand-card-OXY'>▼ Click to expand</div>
 <div class='sc-body' id='body-card-OXY'>
 <div class='sc-price'>
-<div class='price-val'>$57.88</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+1.1% today</div>
-<div class='range-lbl'>
-<span>52wk low $34.78</span>
-<span>94.8% up</span>
-<span>$59.15 high</span>
-</div>
-<div class='range-track'>
-<div class='range-pin' style='left:calc(94.8% - 4px)'></div>
+<div class='price-val'>$57.94</div>
+<div class='chg' style='background:#F0FDF4;color:#059669'>+1.2% today</div>
+<div class='range-lbl'><span>52wk low $34.78</span><span>95.0% up</span><span>$59.15 high</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(95.0% - 4px)'></div></div></div>
+<div class='trace'><div class='trace-t'>Measured Signals - Score: 74.9 / 100</div><div class='score-bars'>
+<div class='sbar'><span class='sbar-l'>Technical</span><div class='sbar-t'><div class='sbar-f' style='width:65%;background:#D97706'></div></div><span class='sbar-v'>26.4/40</span></div>
+<div class='sbar'><span class='sbar-l'>Risk</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>20.0/20</span></div>
+<div class='sbar'><span class='sbar-l'>Quality</span><div class='sbar-t'><div class='sbar-f' style='width:72%;background:#059669'></div></div><span class='sbar-v'>14.5/20</span></div>
+<div class='sbar'><span class='sbar-l'>Macro</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
+<div class='sbar'><span class='sbar-l'>Event</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>7.0/10</span></div>
 </div></div>
-<div class='trace'>
-<div class='trace-t'>Measured Signals - Score: 74.9 / 100</div>
-<div class='score-bars'>
-<div class='sbar'>
-<span class='sbar-l'>Technical</span>
-<div class='sbar-t'><div class='sbar-f' style='width:65%;background:#D97706'></div></div>
-<span class='sbar-v'>26.4/40</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Risk</span>
-<div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div>
-<span class='sbar-v'>20.0/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Quality</span>
-<div class='sbar-t'><div class='sbar-f' style='width:72%;background:#059669'></div></div>
-<span class='sbar-v'>14.5/20</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Macro</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-<div class='sbar'>
-<span class='sbar-l'>Event</span>
-<div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div>
-<span class='sbar-v'>7.0/10</span>
-</div>
-</div></div>
-<div class='checks'>
-<div class='cl-t'>Guardrail Checks</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>No-Chase Rule</span>
-<span class='cli-detail'>+8.1% above MA20 - caution</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>OK</span>
-<span class='cli-name'>Trend Alignment</span>
-<span class='cli-detail'>MA5 57.40 > MA10 55.51 > MA20 53.54 - bull</span>
-</div>
-<div class='cli'>
-<span style='font-weight:700;min-width:30px'>WARN</span>
-<span class='cli-name'>52wk Position</span>
-<span class='cli-detail'>Near 52wk high (59.15) - elevated risk</span>
-</div>
+<div class='checks'><div class='cl-t'>Guardrail Checks</div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>No-Chase Rule</span><span class='cli-detail'>+8.2% above MA20 - caution</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>OK</span><span class='cli-name'>Trend Alignment</span><span class='cli-detail'>MA5 57.40 > MA10 55.51 > MA20 53.55 - bull</span></div>
+<div class='cli'><span style='font-weight:700;min-width:30px'>WARN</span><span class='cli-name'>52wk Position</span><span class='cli-detail'>Near 52wk high (59.15) - elevated risk</span></div>
 </div>
 <div class='levels'>
 <div class='lbox'><div class='lbox-l'>Buy Range</div><div class='lbox-v' style='color:#059669'>$57.11-$57.68</div></div>
-<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$53.25</div></div>
-<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$66.56</div></div>
+<div class='lbox'><div class='lbox-l'>Stop Loss</div><div class='lbox-v' style='color:#DC2626'>$53.30</div></div>
+<div class='lbox'><div class='lbox-l'>Target</div><div class='lbox-v' style='color:#1D4ED8'>$66.63</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-row'>
-<span class='alloc-lbl'>My Alloc</span>
-<input class='alloc-inp' id='alloc-inp-OXY' type='number' min='0' placeholder='$ amount'
-  oninput='updateRR("OXY",57.88,53.25,66.56)' />
+<span class='alloc-lbl'>My $</span>
+<input class='alloc-inp' id='alloc-inp-OXY' type='number' min='0' placeholder='Enter amount'
+  oninput='updateRR("OXY",57.94,53.3,66.63)' />
 <span class='alloc-shares' id='shares-OXY'></span>
 </div>
 <div class='rr-panel'>
-<div class='rr-title'>Risk / Reward Preview</div>
-<div class='rr-row'><span>💰 Potential Gain (to target)</span><span class='rr-gain' id='rr-gain-OXY'>-</span></div>
-<div class='rr-row'><span>🛑 Potential Loss (to stop)</span><span class='rr-loss' id='rr-loss-OXY'>-</span></div>
-<div class='rr-row'><span>📊 Risk:Reward Ratio</span><span class='rr-ratio' id='rr-ratio-OXY'>-</span></div>
+<div class='rr-title'>Risk / Reward — type a dollar amount above to see your numbers</div>
+<div class='rr-row'><span>💰 Potential gain if price hits target ($66.63)</span><span class='rr-gain' id='rr-gain-OXY'>enter amount</span></div>
+<div class='rr-row'><span>🛑 Potential loss if price hits stop ($53.30)</span><span class='rr-loss' id='rr-loss-OXY'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-OXY'>-</span></div>
+<div class='rr-explain' id='rr-explain-OXY'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("OXY","HOLD",74.9,57.88,53.25,66.56)'>💬 Ask AXIOM about OXY</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("OXY","HOLD",74.9,57.94,53.3,66.63)'>💬 Ask AXIOM — should I invest in OXY?</button>
 </div>
 <div class='sc-ai'>
-<div class='ai-badge'>AI Coach - not the decision engine</div>
-<div class='ai-why'>The model scored OXY a hold due to its relatively high technical score of 26.4 and a bull trend, but a relatively low quality score of 14.5, indicating potential risks. Hold, as the energy sector's momentum may continue to drive the stock price up, but be cautious of potential pullbacks.</div>
-<div class='ai-watch'>Watch: Watch the oil price, if it hits $100, OXY's stock could see a significant boost.</div>
+<div class='ai-badge'>AI Coach — plain English explanation</div>
+<div class='ai-why'>OXY is a hold because the company is doing well, but the price is already high. You could hold off on buying more shares until the price dips below $55 to get a better deal.</div>
+<div class='ai-watch'>⚠️ Watch: If the company's oil production increases, the price could rise, so be ready to buy more shares if the company announces increased production levels.</div>
 </div>
 <div class='sc-mas'>
 <span class='ma'>MA5 <strong>$57.40</strong></span>
 <span class='ma'>MA10 <strong>$55.51</strong></span>
-<span class='ma'>MA20 <strong>$53.54</strong></span>
+<span class='ma'>MA20 <strong>$53.55</strong></span>
 </div>
-</div>
-</div></div>
-<div class='footer'>
-INVESTOR 101 - AXIOM US - Auto-generated Tuesday, March 17 2026 at 02:19 PM ET ET<br>
-For educational purposes only - Not investment advice - All investments carry risk<br>
-Data: Finnhub / yfinance | Commentary: Groq/Gemini | Decisions: Rules-based Python model
-</div>
+</div></div></div>
+<div class='footer'>INVESTOR 101 - AXIOM US - Auto-generated Tuesday, March 17 2026 at 02:30 PM ET ET<br>For educational purposes only - Not investment advice - All investments carry risk<br>Data: Finnhub / yfinance | Commentary: Groq/Gemini | Decisions: Rules-based Python model</div>
 </div>
 <button class='chat-btn' onclick='toggleChat()'>💬 Ask AXIOM</button>
 <div class='chat-box' id='chatBox'>
 <div class='chat-hdr'><span>💬 AXIOM Coach</span><span class='chat-close' onclick='toggleChat()'>✕</span></div>
-<div class='chat-msgs' id='chatMsgs'><div class='msg ai'>Hi! I know your full portfolio today. Type a $ amount into any stock card to see risk/reward, or ask me anything about the portfolio.</div></div>
+<div class='chat-msgs' id='chatMsgs'><div class='msg ai'>Hi! I know your full portfolio. Type a dollar amount into any stock card to see your risk and potential reward, or ask me anything!</div></div>
 <div class='chat-inp'><input id='chatIn' type='text' placeholder='Ask anything...' onkeydown='if(event.key=="Enter")sendMsg()'/><button onclick='sendMsg()'>Send</button></div>
 </div>
 <script>
-const PORTFOLIO = [{"sym":"NVDA","verdict":"BUY","score":81.8,"price":183.3,"stop":168.64,"target":210.79,"alloc":25.0},{"sym":"COP","verdict":"BUY","score":82.6,"price":123.52,"stop":113.64,"target":142.05,"alloc":25.0},{"sym":"SNOW","verdict":"HOLD","score":79.3,"price":174.71,"stop":160.73,"target":200.92,"alloc":16.0},{"sym":"CVX","verdict":"HOLD","score":78.1,"price":198.71,"stop":182.81,"target":228.52,"alloc":16.0},{"sym":"GOOGL","verdict":"HOLD","score":70.8,"price":309.57,"stop":284.8,"target":356.01,"alloc":10.0},{"sym":"XOM","verdict":"HOLD","score":67.1,"price":159.53,"stop":146.77,"target":183.46,"alloc":10.0},{"sym":"OXY","verdict":"HOLD","score":74.9,"price":57.88,"stop":53.25,"target":66.56,"alloc":10.0}];
+const PORTFOLIO = [{"sym":"NVDA","verdict":"BUY","score":81.8,"price":183.06,"stop":168.42,"target":210.52},{"sym":"COP","verdict":"BUY","score":82.6,"price":123.57,"stop":113.68,"target":142.11},{"sym":"CVX","verdict":"HOLD","score":78.1,"price":198.82,"stop":182.91,"target":228.64},{"sym":"GOOGL","verdict":"HOLD","score":70.8,"price":309.29,"stop":284.55,"target":355.68},{"sym":"CRWD","verdict":"HOLD","score":71.1,"price":430.71,"stop":396.25,"target":495.32},{"sym":"XOM","verdict":"HOLD","score":67.1,"price":159.51,"stop":146.75,"target":183.44},{"sym":"OXY","verdict":"HOLD","score":74.9,"price":57.94,"stop":53.3,"target":66.63}];
 const BUDGET_DEFAULT = 340;
-const CASH_RESERVE = 0.08;
 const FEAR = 'GREED';
 
 function fmt(n){ return '$'+parseFloat(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
@@ -894,16 +577,9 @@ function toggleCard(id){
     lbl.textContent = body.classList.contains('open') ? '\u25b2 Click to collapse' : '\u25bc Click to expand';
 }
 
-function updateBudget(val){
-    const b = parseFloat(val) || BUDGET_DEFAULT;
-    localStorage.setItem('axiom_budget', b);
-    recalcTotals();
-}
-
 function getUserAlloc(sym){
     const inp = document.getElementById('alloc-inp-'+sym);
-    if(inp) return parseFloat(inp.value)||0;
-    return 0;
+    return inp ? (parseFloat(inp.value)||0) : 0;
 }
 
 function recalcTotals(){
@@ -919,16 +595,17 @@ function recalcTotals(){
 
 function updateRR(sym, price, stop, target){
     const alloc = getUserAlloc(sym);
-    const sharesEl = document.getElementById('shares-'+sym);
-    const gainEl   = document.getElementById('rr-gain-'+sym);
-    const lossEl   = document.getElementById('rr-loss-'+sym);
-    const ratioEl  = document.getElementById('rr-ratio-'+sym);
-    if(!sharesEl) return;
-    if(alloc <= 0 || price <= 0){
+    const sharesEl  = document.getElementById('shares-'+sym);
+    const gainEl    = document.getElementById('rr-gain-'+sym);
+    const lossEl    = document.getElementById('rr-loss-'+sym);
+    const ratioEl   = document.getElementById('rr-ratio-'+sym);
+    const explainEl = document.getElementById('rr-explain-'+sym);
+    if(alloc <= 0){
         sharesEl.textContent = '';
-        gainEl.textContent = '-';
-        lossEl.textContent = '-';
+        gainEl.textContent = 'enter amount';
+        lossEl.textContent = 'enter amount';
         ratioEl.textContent = '-';
+        if(explainEl) explainEl.style.display='none';
         recalcTotals();
         return;
     }
@@ -939,14 +616,22 @@ function updateRR(sym, price, stop, target){
     gainEl.textContent = '+' + fmt(gain);
     lossEl.textContent = '-' + fmt(loss);
     const ratio = loss > 0 ? gain/loss : 0;
-    const ratioStr = '1 : ' + ratio.toFixed(1);
-    ratioEl.textContent = ratioStr;
-    if(ratio >= 2){
-        ratioEl.style.background='#F0FDF4'; ratioEl.style.color='#059669'; ratioEl.style.borderColor='#059669';
-    } else if(ratio >= 1){
-        ratioEl.style.background='#FFFBEB'; ratioEl.style.color='#D97706'; ratioEl.style.borderColor='#D97706';
-    } else {
-        ratioEl.style.background='#FFF1F2'; ratioEl.style.color='#DC2626'; ratioEl.style.borderColor='#DC2626';
+    ratioEl.textContent = '$' + ratio.toFixed(2);
+    if(explainEl){
+        explainEl.style.display = 'block';
+        if(ratio >= 2){
+            ratioEl.style.cssText = 'background:#F0FDF4;color:#059669;border-color:#059669;font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;border:1.5px solid;';
+            explainEl.style.cssText = 'display:block;font-size:11px;margin-top:6px;padding:6px 8px;border-radius:6px;background:#F0FDF4;color:#059669;';
+            explainEl.textContent = '\u2705 Strong setup \u2014 for every $1 you risk losing, you could gain $' + ratio.toFixed(2) + '. This is a favorable trade.';
+        } else if(ratio >= 1){
+            ratioEl.style.cssText = 'background:#FFFBEB;color:#D97706;border-color:#D97706;font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;border:1.5px solid;';
+            explainEl.style.cssText = 'display:block;font-size:11px;margin-top:6px;padding:6px 8px;border-radius:6px;background:#FFFBEB;color:#D97706;';
+            explainEl.textContent = '\u26a0\ufe0f Fair setup \u2014 for every $1 you risk losing, you could gain $' + ratio.toFixed(2) + '. Proceed with caution and keep your position size small.';
+        } else {
+            ratioEl.style.cssText = 'background:#FFF1F2;color:#DC2626;border-color:#DC2626;font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;border:1.5px solid;';
+            explainEl.style.cssText = 'display:block;font-size:11px;margin-top:6px;padding:6px 8px;border-radius:6px;background:#FFF1F2;color:#DC2626;';
+            explainEl.textContent = '\u274c Poor setup \u2014 you are risking more than you could gain. Consider a smaller amount or wait for a better entry price closer to the buy range.';
+        }
     }
     recalcTotals();
 }
@@ -954,23 +639,18 @@ function updateRR(sym, price, stop, target){
 function askAxiomAbout(sym, verdict, score, price, stop, target){
     const alloc = getUserAlloc(sym);
     const budget = parseFloat(document.getElementById('budgetInput').value)||BUDGET_DEFAULT;
-    const q = 'I am looking at ' + sym + ' which has a ' + verdict + ' signal with score ' + score +
-        '. Current price is $' + price + ', stop loss $' + stop + ', target $' + target +
-        '. My total budget is $' + budget + (alloc > 0 ? ' and I am thinking of putting in $' + alloc + '. Is this a good amount?' : '. How much should I allocate?');
+    const q = 'I am considering ' + sym + ' which has a ' + verdict + ' signal (score: ' + score + '). '
+        + 'Current price is $' + price + ', stop loss is $' + stop + ' (meaning I would sell to cut losses if it drops here), '
+        + 'and the target price is $' + target + '. My total budget is $' + budget + '. '
+        + (alloc > 0 ? 'I am thinking of putting in $' + alloc + '. Is this a good amount and what is my risk?' : 'How much should I put in and what is my risk?');
     document.getElementById('chatBox').classList.add('open');
     document.getElementById('chatIn').value = q;
     sendMsg();
 }
 
-window.onload = function(){
-    const saved = localStorage.getItem('axiom_budget');
-    if(saved){ document.getElementById('budgetInput').value = saved; }
-    recalcTotals();
-};
+window.onload = function(){ recalcTotals(); };
 
-function toggleChat(){
-    document.getElementById('chatBox').classList.toggle('open');
-}
+function toggleChat(){ document.getElementById('chatBox').classList.toggle('open'); }
 
 async function sendMsg(){
     const inp = document.getElementById('chatIn');
@@ -979,16 +659,16 @@ async function sendMsg(){
     inp.value = '';
     addMsg(msg, 'user');
     addMsg('Thinking...', 'ai', 'thinking');
-    const context = 'Portfolio today: ' + PORTFOLIO.map(p =>
+    const context = 'Portfolio: ' + PORTFOLIO.map(p =>
         p.sym + ' ' + p.verdict + ' score=' + p.score + ' price=$' + p.price +
-        ' stop=$' + p.stop + ' target=$' + p.target + ' userAlloc=$' + getUserAlloc(p.sym)
-    ).join(', ') + '. Market fear: ' + FEAR + '.';
+        ' stop=$' + p.stop + ' target=$' + p.target + ' myAlloc=$' + getUserAlloc(p.sym)
+    ).join(', ') + '. Market: ' + FEAR + '.';
     try {
         const r = await fetch('/api/chat', {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({messages:[
-                {role:'system', content:'You are AXIOM Coach, an expert investing teacher for a beginner investor. You have full context of their portfolio including their current custom allocations. Be direct, use dollar amounts, explain simply. Never say consult a financial advisor. Context: ' + context},
+                {role:'system', content:'You are AXIOM Coach, an expert investing teacher for a complete beginner. Use plain simple English. Avoid jargon - if you use a term explain it. Be direct, use real dollar amounts. Never say consult a financial advisor. Context: ' + context},
                 {role:'user', content: msg}
             ]})
         });
@@ -1012,5 +692,4 @@ function addMsg(text, role, id){
     box.scrollTop = box.scrollHeight;
 }
 
-</script>
-</body></html>
+</script></body></html>
