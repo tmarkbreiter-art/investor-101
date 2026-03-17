@@ -1,10 +1,8 @@
-name: AXIOM Daily + Market Hours Refresh
+name: AXIOM Daily Refresh
 
 on:
   schedule:
-    # Run every 30 minutes Mon-Fri during market hours (9:00am - 4:30pm ET = 13:00-20:30 UTC)
     - cron: "0,30 13-20 * * 1-5"
-    # Also run once at 6am ET daily for pre-market snapshot
     - cron: "0 10 * * 1-5"
   workflow_dispatch:
 
@@ -27,7 +25,7 @@ jobs:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-                run: python run.py
+        run: python run.py
 
       - name: Commit and push dashboard
         run: |
