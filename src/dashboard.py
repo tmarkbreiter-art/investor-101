@@ -68,8 +68,8 @@ def ma_val(mas, key):
 
 
 def check_icon(status):
-    m = {"ok": "✅", "warn": "⚠️", "block": "🚫", "warning": "⚠️"}
-    return m.get(status, "⚠️")
+    m = {"ok": "OK", "warn": "WARN", "block": "BLOCK", "warning": "WARN"}
+    return m.get(status, "WARN")
 
 
 def get_css():
@@ -203,7 +203,6 @@ def build_card(p, config):
     parts = []
     parts.append("<div class='scard' id='" + card_id + "' onclick='toggleCard(\"" + card_id + "\")'>")
 
-    # Always visible top
     parts.append("<div class='sc-top'>")
     parts.append("<div>")
     parts.append("<div class='sc-sym' style='color:" + sym_color + "'>" + sym + "</div>")
@@ -218,7 +217,6 @@ def build_card(p, config):
 
     parts.append("<div class='sc-expand' id='expand-" + card_id + "'>▼ Click to expand</div>")
 
-    # Collapsible body
     parts.append("<div class='sc-body' id='body-" + card_id + "'>")
 
     parts.append("<div class='sc-price'>")
@@ -277,8 +275,8 @@ def build_card(p, config):
     parts.append("<span class='ma'>MA20 <strong>" + ma_val(mas, "ma20") + "</strong></span>")
     parts.append("</div>")
 
-    parts.append("</div>")  # end sc-body
-    parts.append("</div>")  # end scard
+    parts.append("</div>")
+    parts.append("</div>")
     return "\n".join(parts)
 
 
@@ -325,6 +323,8 @@ class DashboardGenerator:
             ",\"alloc\":" + str(p.get("alloc_dollar", 0)) + "}"
             for p in portfolio
         ) + "]"
+
+        cash_reserve = self.config.CASH_RESERVE
 
         parts = []
         parts.append("<!DOCTYPE html><html lang='en'><head>")
@@ -377,10 +377,8 @@ class DashboardGenerator:
         parts.append("For educational purposes only - Not investment advice - All investments carry risk<br>")
         parts.append("Data: Finnhub / yfinance | Commentary: Groq/Gemini | Decisions: Rules-based Python model")
         parts.append("</div>")
-
         parts.append("</div>")
 
-        # Chat button + box
         parts.append("<button class='chat-btn' onclick='toggleChat()'>💬 Ask AXIOM</button>")
         parts.append("<div class='chat-box' id='chatBox'>")
         parts.append("<div class='chat-hdr'><span>💬 AXIOM Coach</span><span class='chat-close' onclick='toggleChat()'>✕</span></div>")
@@ -388,16 +386,13 @@ class DashboardGenerator:
         parts.append("<div class='chat-inp'><input id='chatIn' type='text' placeholder='Ask anything...' onkeydown='if(event.key==\"Enter\")sendMsg()'/><button onclick='sendMsg()'>Send</button></div>")
         parts.append("</div>")
 
-        cash_reserve = self.config.CASH_RESERVE
-
+        parts.append("<script>")
+        parts.append("const PORTFOLIO = " + portfolio_json + ";")
+        parts.append("const BUDGET_DEFAULT = " + str(int(budget)) + ";")
+        parts.append("const CASH_RESERVE = " + str(cash_reserve) + ";")
+        parts.append("const FEAR = '" + fear + "';")
         parts.append("""
-<script>
-const PORTFOLIO = """ + portfolio_json + """;
-const BUDGET_DEFAULT = """ + str(int(budget)) + """;
-const CASH_RESERVE = """ + str(cash_reserve) + """;
-const INVESTED = """ + str(float(invested)) + """;
-
-function fmt(n){ return '$'+parseFloat(n).toFixed(2).replace(/\\B(?=(\\d{3})+(?!\\d))/g,','); }
+function fmt(n){ return '$'+parseFloat(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
 
 function toggleCard(id){
     const body = document.getElementById('body-'+id);
@@ -434,12 +429,10 @@ async function sendMsg(){
     inp.value = '';
     addMsg(msg, 'user');
     addMsg('Thinking...', 'ai', 'thinking');
-
     const context = 'Portfolio today: ' + PORTFOLIO.map(p =>
         p.sym + ' ' + p.verdict + ' score=' + p.score + ' price=$' + p.price +
         ' stop=$' + p.stop + ' target=$' + p.target + ' alloc=$' + p.alloc
-    ).join(', ') + '. Market fear: """ + fear + """.';
-
+    ).join(', ') + '. Market fear: ' + FEAR + '.';
     try {
         const r = await fetch('/api/chat', {
             method: 'POST',
@@ -468,7 +461,8 @@ function addMsg(text, role, id){
     box.appendChild(div);
     box.scrollTop = box.scrollHeight;
 }
-</script>
-</body></html>""")
+""")
+        parts.append("</script>")
+        parts.append("</body></html>")
 
         return "\n".join(parts)
