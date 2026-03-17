@@ -1,6 +1,11 @@
 {
-    "outputDirectory": "docs",
-    "rewrites": [
-        { "source": "/api/(.*)", "destination": "/api/$1" }
-    ]
+  "buildCommand": "echo 'Static site'",
+  "outputDirectory": ".",
+  "framework": null,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
