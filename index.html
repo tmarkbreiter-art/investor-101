@@ -626,7 +626,7 @@ async function sendMsg(){
   const stockContext=PORTFOLIO.map(p=>{ const lp=livePrices[p.sym]||0; return p.sym+' ('+getVerdict(p,lp)+', $'+lp.toFixed(2)+', score '+p.score+')'; }).join(' | ');
   const sysPrompt='You are AXIOM Coach. Help a complete beginner investor. CRITICAL: User budget is $'+budget+' — NEVER suggest investing more than $'+budget+' total. Max 4 sentences. No jargon. No bullet points. Talk like a smart helpful friend. Never say consult a financial advisor. Positions: '+posContext+'. Watchlist: '+stockContext+'.';
   try{
-    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'system',content:sysPrompt},{role:'user',content:msg}]})});
+    const r=await fetch('https://investor-101.vercel.app/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'system',content:sysPrompt},{role:'user',content:msg}]})});
     const data=await r.json();
     document.getElementById('thinking')?.remove();
     addMsg(data.choices[0].message.content,'ai');
