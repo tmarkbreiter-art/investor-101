@@ -164,35 +164,100 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='tbs'><div class='tbs-l'>My Budget</div><div class='tbs-v'>$<input class='budget-input' id='budgetInput' type='number' value='500' oninput='recalcTotals()'/></div></div>
 <div class='tbs'><div class='tbs-l'>Invested</div><div class='tbs-v' id='investedVal'>$0.00</div></div>
 <div class='tbs'><div class='tbs-l'>Cash Left</div><div class='tbs-v' id='cashVal'>$500.00</div></div>
-<div class='tbs'><div class='tbs-l'>Buy Signals</div><div class='tbs-v' style='color:#059669'>4 stocks</div></div>
-<div style='font-size:11px;color:#9D9690;white-space:nowrap'>07:22 AM ET</div>
+<div class='tbs'><div class='tbs-l'>Buy Signals</div><div class='tbs-v' style='color:#059669'>2 stocks</div></div>
+<div style='font-size:11px;color:#9D9690;white-space:nowrap'>11:13 AM ET</div>
 </div></div></div>
 <div class='wrap'>
 <div class='refresh-bar'>
-<span>📡 Last updated: <strong>Thursday, April 30 2026 at 07:22 AM ET</strong> — data updates automatically each day</span>
+<span>📡 Last updated: <strong>Thursday, April 30 2026 at 11:13 AM ET</strong> — data updates automatically each day</span>
 </div>
 <div class='pulse'>
-<div class='pi'><div class='pi-l'>S&amp;P 500 (whole market)</div><div class='pi-v' style='color:#DC2626'>$711.58</div><div class='pi-c' style='color:#DC2626'>-0.0% today</div></div>
-<div class='pi'><div class='pi-l'>Nasdaq (tech stocks)</div><div class='pi-v' style='color:#059669'>$661.57</div><div class='pi-c' style='color:#059669'>+0.6% today</div></div>
-<div class='pi'><div class='pi-l'>Oil prices</div><div class='pi-v'>$150.63</div><div class='pi-c'>+7.9% today</div></div>
-<div class='pi'><div class='pi-l'>Market Fear Level</div><div class='pi-v' style='color:#059669'>$28.01</div><div class='pi-c' style='color:#059669'>GREED</div></div>
+<div class='pi'><div class='pi-l'>S&amp;P 500 (whole market)</div><div class='pi-v' style='color:#059669'>$714.44</div><div class='pi-c' style='color:#059669'>+0.4% today</div></div>
+<div class='pi'><div class='pi-l'>Nasdaq (tech stocks)</div><div class='pi-v' style='color:#059669'>$663.48</div><div class='pi-c' style='color:#059669'>+0.3% today</div></div>
+<div class='pi'><div class='pi-l'>Oil prices</div><div class='pi-v'>$146.78</div><div class='pi-c'>-2.6% today</div></div>
+<div class='pi'><div class='pi-l'>Market Fear Level</div><div class='pi-v' style='color:#059669'>$27.34</div><div class='pi-c' style='color:#059669'>GREED</div></div>
 </div>
-<div class='regime' style='background:#FFFBEB;border-color:#D97706'>
+<div class='regime' style='background:#F0FDF4;border-color:#059669'>
 <div class='regime-label'>Today's Market Conditions</div>
-<div class='regime-val' style='color:#D97706'>MIXED — Market is uncertain, be selective</div>
-<div class='regime-sub'>Today's buy signals: <strong>COP, AAPL, MSFT, GOOGL</strong></div>
+<div class='regime-val' style='color:#059669'>BULL MARKET — Good conditions to invest</div>
+<div class='regime-sub'>Today's buy signals: <strong>NVDA, COP</strong></div>
 </div>
 <div class='stats'>
-<div class='sb'><div class='sb-l'>Stocks to Buy Now</div><div class='sb-v' style='color:#059669'>4</div><div class='sb-s'>system-verified signals</div></div>
+<div class='sb'><div class='sb-l'>Stocks to Buy Now</div><div class='sb-v' style='color:#059669'>2</div><div class='sb-s'>system-verified signals</div></div>
 <div class='sb'><div class='sb-l'>Stocks to Watch</div><div class='sb-v' style='color:#D97706'>6</div><div class='sb-s'>not ready to buy yet</div></div>
-<div class='sb'><div class='sb-l'>You Have Invested</div><div class='sb-v' id='investedStat'>$0.00</div><div class='sb-s'>across 10 stocks</div></div>
+<div class='sb'><div class='sb-l'>You Have Invested</div><div class='sb-v' id='investedStat'>$0.00</div><div class='sb-s'>across 8 stocks</div></div>
 <div class='sb'><div class='sb-l'>Cash Remaining</div><div class='sb-v' id='cashStat'>$500.00</div><div class='sb-s'>available to deploy</div></div>
 </div>
 <div class='sec-hdr'>
 <div class='sec-t'>Today's Stock Analysis</div>
 <div class='sec-s'>Tap any card to see full details &amp; enter your investment amount</div>
 </div>
-<div class='grid'><div class='scard' id='card-COP' onclick='toggleCard("card-COP")'>
+<div class='grid'><div class='scard' id='card-NVDA' onclick='toggleCard("card-NVDA")'>
+<div class='sc-top'>
+<div class='sc-left'>
+<div class='sc-sym' style='color:#059669'>NVDA</div>
+<div class='sc-name'>NVIDIA</div>
+<div class='sc-sec'>Technology</div>
+</div>
+<div class='sc-right'>
+<div class='verdict' style='background:#F0FDF4;color:#059669;border-color:#059669'>BUY</div>
+<div style='font-size:20px;font-weight:800;margin:4px 0'>$202.10</div>
+<div class='sc-summary'>System says buy now</div>
+</div></div>
+<div class='sc-expand' id='expand-card-NVDA'>▼ Tap to see full analysis</div>
+<div class='sc-body' id='body-card-NVDA'>
+<div class='sc-price'>
+<div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
+<div class='price-val'>$202.10</div>
+<div class='chg' style='background:#FFF1F2;color:#DC2626'>-3.4% today</div>
+</div>
+<div class='yr-range-label'>Where it sits in its yearly range</div>
+<div class='range-lbl'><span>Yearly Low $110.82</span><span>86.1% of the way up</span><span>Yearly High $216.83</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(86.1% - 5px)'></div></div>
+</div>
+<div class='score-section'>
+<div class='score-badge' style='background:#F0FDF4;color:#059669'>STRONG BUY CANDIDATE</div>
+<div class='score-num'>Overall Score: <strong>83.8 / 100</strong></div>
+<div class='score-bars'>
+<div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:86%;background:#059669'></div></div><span class='sbar-v'>86%</span></div>
+<div class='sbar'><span class='sbar-l'>Risk Level</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
+<div class='sbar'><span class='sbar-l'>Company Quality</span><div class='sbar-t'><div class='sbar-f' style='width:90%;background:#059669'></div></div><span class='sbar-v'>90%</span></div>
+<div class='sbar'><span class='sbar-l'>Market Conditions</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
+<div class='sbar'><span class='sbar-l'>News & Events</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
+</div></div>
+<div class='checks'><div class='cl-t'>Safety Checks</div>
+<div class='cli'><div class='cli-q'>Is the price too high right now?</div><div class='cli-a'>✅ No — price is at a reasonable level</div></div>
+<div class='cli'><div class='cli-q'>Is the price trending upward?</div><div class='cli-a'>✅ Yes — price is moving up steadily</div></div>
+<div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>✅ Healthy — not at extreme highs or lows</div></div>
+</div>
+<div class='levels'>
+<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$208.73 – $210.83</div><div class='lbox-sub'>Best price to buy</div></div>
+<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$185.93</div><div class='lbox-sub'>Protect yourself here</div></div>
+<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$232.41</div><div class='lbox-sub'>Where it could go</div></div>
+</div>
+<div class='alloc-section' onclick='event.stopPropagation()'>
+<div class='alloc-title'>💵 How much do you want to invest?</div>
+<div class='alloc-row'>
+<input class='alloc-inp' id='alloc-inp-NVDA' type='number' min='0' placeholder='$0'
+  oninput='updateRR("NVDA",202.1,185.93,232.41)' />
+<span class='alloc-shares' id='shares-NVDA'></span>
+</div>
+<div class='rr-panel'>
+<div class='rr-title'>Your Risk &amp; Reward</div>
+<div class='rr-row'><span>💰 You could make (if it hits target)</span><span class='rr-gain' id='rr-gain-NVDA'>enter amount</span></div>
+<div class='rr-row'><span>🛑 You could lose (if it hits sell point)</span><span class='rr-loss' id='rr-loss-NVDA'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-NVDA'>-</span></div>
+<div class='rr-explain' id='rr-explain-NVDA'></div>
+</div>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("NVDA","BUY",83.8,202.1,185.93,232.41)'>💬 Ask AXIOM — should I put money in NVDA?</button>
+</div>
+<div class='sc-ai'>
+<div class='ai-badge'>🤖 AXIOM Coach says</div>
+<div class='ai-why'>This stock scored well on price momentum and company quality.</div>
+<div class='ai-watch'>⚠️ Watch for any big price drops — if it falls to the sell point, act quickly to protect yourself.</div>
+</div>
+</div></div>
+<div class='scard' id='card-COP' onclick='toggleCard("card-COP")'>
 <div class='sc-top'>
 <div class='sc-left'>
 <div class='sc-sym' style='color:#059669'>COP</div>
@@ -201,25 +266,25 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 </div>
 <div class='sc-right'>
 <div class='verdict' style='background:#F0FDF4;color:#059669;border-color:#059669'>BUY</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$128.25</div>
+<div style='font-size:20px;font-weight:800;margin:4px 0'>$126.70</div>
 <div class='sc-summary'>System says buy now</div>
 </div></div>
 <div class='sc-expand' id='expand-card-COP'>▼ Tap to see full analysis</div>
 <div class='sc-body' id='body-card-COP'>
 <div class='sc-price'>
 <div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$128.25</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+3.2% today</div>
+<div class='price-val'>$126.70</div>
+<div class='chg' style='background:#FFF1F2;color:#DC2626'>-1.2% today</div>
 </div>
 <div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $84.28</span><span>85.2% of the way up</span><span>Yearly High $135.87</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(85.2% - 5px)'></div></div>
+<div class='range-lbl'><span>Yearly Low $84.28</span><span>82.2% of the way up</span><span>Yearly High $135.87</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(82.2% - 5px)'></div></div>
 </div>
 <div class='score-section'>
 <div class='score-badge' style='background:#F0FDF4;color:#059669'>STRONG BUY CANDIDATE</div>
-<div class='score-num'>Overall Score: <strong>83.6 / 100</strong></div>
+<div class='score-num'>Overall Score: <strong>86.8 / 100</strong></div>
 <div class='score-bars'>
-<div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:76%;background:#059669'></div></div><span class='sbar-v'>76%</span></div>
+<div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:84%;background:#059669'></div></div><span class='sbar-v'>84%</span></div>
 <div class='sbar'><span class='sbar-l'>Risk Level</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
 <div class='sbar'><span class='sbar-l'>Company Quality</span><div class='sbar-t'><div class='sbar-f' style='width:95%;background:#059669'></div></div><span class='sbar-v'>95%</span></div>
 <div class='sbar'><span class='sbar-l'>Market Conditions</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
@@ -231,15 +296,15 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>✅ Healthy — not at extreme highs or lows</div></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$127.87 – $128.63</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$117.99</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$147.49</div><div class='lbox-sub'>Where it could go</div></div>
+<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$126.32 – $127.08</div><div class='lbox-sub'>Best price to buy</div></div>
+<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$116.56</div><div class='lbox-sub'>Protect yourself here</div></div>
+<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$145.70</div><div class='lbox-sub'>Where it could go</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-title'>💵 How much do you want to invest?</div>
 <div class='alloc-row'>
 <input class='alloc-inp' id='alloc-inp-COP' type='number' min='0' placeholder='$0'
-  oninput='updateRR("COP",128.25,117.99,147.49)' />
+  oninput='updateRR("COP",126.7,116.56,145.7)' />
 <span class='alloc-shares' id='shares-COP'></span>
 </div>
 <div class='rr-panel'>
@@ -249,7 +314,7 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-COP'>-</span></div>
 <div class='rr-explain' id='rr-explain-COP'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("COP","BUY",83.6,128.25,117.99,147.49)'>💬 Ask AXIOM — should I put money in COP?</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("COP","BUY",86.8,126.7,116.56,145.7)'>💬 Ask AXIOM — should I put money in COP?</button>
 </div>
 <div class='sc-ai'>
 <div class='ai-badge'>🤖 AXIOM Coach says</div>
@@ -257,36 +322,36 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='ai-watch'>⚠️ Watch for any big price drops — if it falls to the sell point, act quickly to protect yourself.</div>
 </div>
 </div></div>
-<div class='scard' id='card-AAPL' onclick='toggleCard("card-AAPL")'>
+<div class='scard' id='card-CRWD' onclick='toggleCard("card-CRWD")'>
 <div class='sc-top'>
 <div class='sc-left'>
-<div class='sc-sym' style='color:#059669'>AAPL</div>
-<div class='sc-name'>Apple</div>
+<div class='sc-sym' style='color:#D97706'>CRWD</div>
+<div class='sc-name'>CrowdStrike</div>
 <div class='sc-sec'>Technology</div>
 </div>
 <div class='sc-right'>
-<div class='verdict' style='background:#F0FDF4;color:#059669;border-color:#059669'>BUY</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$270.17</div>
-<div class='sc-summary'>System says buy now</div>
+<div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
+<div style='font-size:20px;font-weight:800;margin:4px 0'>$445.97</div>
+<div class='sc-summary'>Watch — not buying yet</div>
 </div></div>
-<div class='sc-expand' id='expand-card-AAPL'>▼ Tap to see full analysis</div>
-<div class='sc-body' id='body-card-AAPL'>
+<div class='sc-expand' id='expand-card-CRWD'>▼ Tap to see full analysis</div>
+<div class='sc-body' id='body-card-CRWD'>
 <div class='sc-price'>
 <div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$270.17</div>
-<div class='chg' style='background:#FFF1F2;color:#DC2626'>-0.2% today</div>
+<div class='price-val'>$445.97</div>
+<div class='chg' style='background:#FFF1F2;color:#DC2626'>-1.4% today</div>
 </div>
 <div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $193.25</span><span>80.7% of the way up</span><span>Yearly High $288.62</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(80.7% - 5px)'></div></div>
+<div class='range-lbl'><span>Yearly Low $342.72</span><span>46.1% of the way up</span><span>Yearly High $566.90</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(46.1% - 5px)'></div></div>
 </div>
 <div class='score-section'>
-<div class='score-badge' style='background:#F0FDF4;color:#059669'>STRONG BUY CANDIDATE</div>
-<div class='score-num'>Overall Score: <strong>85.8 / 100</strong></div>
+<div class='score-badge' style='background:#FFFBEB;color:#D97706'>DECENT PICK</div>
+<div class='score-num'>Overall Score: <strong>76.1 / 100</strong></div>
 <div class='score-bars'>
 <div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:79%;background:#059669'></div></div><span class='sbar-v'>79%</span></div>
-<div class='sbar'><span class='sbar-l'>Risk Level</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
-<div class='sbar'><span class='sbar-l'>Company Quality</span><div class='sbar-t'><div class='sbar-f' style='width:85%;background:#059669'></div></div><span class='sbar-v'>85%</span></div>
+<div class='sbar'><span class='sbar-l'>Risk Level</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
+<div class='sbar'><span class='sbar-l'>Company Quality</span><div class='sbar-t'><div class='sbar-f' style='width:67%;background:#D97706'></div></div><span class='sbar-v'>67%</span></div>
 <div class='sbar'><span class='sbar-l'>Market Conditions</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
 <div class='sbar'><span class='sbar-l'>News & Events</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
 </div></div>
@@ -296,25 +361,25 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>✅ Healthy — not at extreme highs or lows</div></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$269.24 – $271.95</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$248.56</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$310.70</div><div class='lbox-sub'>Where it could go</div></div>
+<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$449.02 – $453.53</div><div class='lbox-sub'>Best price to buy</div></div>
+<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$410.29</div><div class='lbox-sub'>Protect yourself here</div></div>
+<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$512.87</div><div class='lbox-sub'>Where it could go</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-title'>💵 How much do you want to invest?</div>
 <div class='alloc-row'>
-<input class='alloc-inp' id='alloc-inp-AAPL' type='number' min='0' placeholder='$0'
-  oninput='updateRR("AAPL",270.17,248.56,310.7)' />
-<span class='alloc-shares' id='shares-AAPL'></span>
+<input class='alloc-inp' id='alloc-inp-CRWD' type='number' min='0' placeholder='$0'
+  oninput='updateRR("CRWD",445.97,410.29,512.87)' />
+<span class='alloc-shares' id='shares-CRWD'></span>
 </div>
 <div class='rr-panel'>
 <div class='rr-title'>Your Risk &amp; Reward</div>
-<div class='rr-row'><span>💰 You could make (if it hits target)</span><span class='rr-gain' id='rr-gain-AAPL'>enter amount</span></div>
-<div class='rr-row'><span>🛑 You could lose (if it hits sell point)</span><span class='rr-loss' id='rr-loss-AAPL'>enter amount</span></div>
-<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-AAPL'>-</span></div>
-<div class='rr-explain' id='rr-explain-AAPL'></div>
+<div class='rr-row'><span>💰 You could make (if it hits target)</span><span class='rr-gain' id='rr-gain-CRWD'>enter amount</span></div>
+<div class='rr-row'><span>🛑 You could lose (if it hits sell point)</span><span class='rr-loss' id='rr-loss-CRWD'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-CRWD'>-</span></div>
+<div class='rr-explain' id='rr-explain-CRWD'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("AAPL","BUY",85.8,270.17,248.56,310.7)'>💬 Ask AXIOM — should I put money in AAPL?</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("CRWD","HOLD",76.1,445.97,410.29,512.87)'>💬 Ask AXIOM — should I put money in CRWD?</button>
 </div>
 <div class='sc-ai'>
 <div class='ai-badge'>🤖 AXIOM Coach says</div>
@@ -322,100 +387,35 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='ai-watch'>⚠️ Watch for any big price drops — if it falls to the sell point, act quickly to protect yourself.</div>
 </div>
 </div></div>
-<div class='scard' id='card-MSFT' onclick='toggleCard("card-MSFT")'>
+<div class='scard' id='card-AMZN' onclick='toggleCard("card-AMZN")'>
 <div class='sc-top'>
 <div class='sc-left'>
-<div class='sc-sym' style='color:#059669'>MSFT</div>
-<div class='sc-name'>Microsoft</div>
+<div class='sc-sym' style='color:#D97706'>AMZN</div>
+<div class='sc-name'>Amazon</div>
 <div class='sc-sec'>Technology</div>
 </div>
 <div class='sc-right'>
-<div class='verdict' style='background:#F0FDF4;color:#059669;border-color:#059669'>BUY</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$424.46</div>
-<div class='sc-summary'>System says buy now</div>
+<div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
+<div style='font-size:20px;font-weight:800;margin:4px 0'>$259.90</div>
+<div class='sc-summary'>Watch — not buying yet</div>
 </div></div>
-<div class='sc-expand' id='expand-card-MSFT'>▼ Tap to see full analysis</div>
-<div class='sc-body' id='body-card-MSFT'>
+<div class='sc-expand' id='expand-card-AMZN'>▼ Tap to see full analysis</div>
+<div class='sc-body' id='body-card-AMZN'>
 <div class='sc-price'>
 <div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$424.46</div>
-<div class='chg' style='background:#FFF1F2;color:#DC2626'>-1.1% today</div>
+<div class='price-val'>$259.90</div>
+<div class='chg' style='background:#FFF1F2;color:#DC2626'>-1.2% today</div>
 </div>
 <div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $356.28</span><span>34.2% of the way up</span><span>Yearly High $555.45</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(34.2% - 5px)'></div></div>
+<div class='range-lbl'><span>Yearly Low $183.85</span><span>92.7% of the way up</span><span>Yearly High $265.91</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(92.7% - 5px)'></div></div>
 </div>
 <div class='score-section'>
-<div class='score-badge' style='background:#F0FDF4;color:#059669'>STRONG BUY CANDIDATE</div>
-<div class='score-num'>Overall Score: <strong>81.6 / 100</strong></div>
+<div class='score-badge' style='background:#FFFBEB;color:#D97706'>DECENT PICK</div>
+<div class='score-num'>Overall Score: <strong>78.6 / 100</strong></div>
 <div class='score-bars'>
-<div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:79%;background:#059669'></div></div><span class='sbar-v'>79%</span></div>
+<div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:74%;background:#059669'></div></div><span class='sbar-v'>74%</span></div>
 <div class='sbar'><span class='sbar-l'>Risk Level</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
-<div class='sbar'><span class='sbar-l'>Company Quality</span><div class='sbar-t'><div class='sbar-f' style='width:95%;background:#059669'></div></div><span class='sbar-v'>95%</span></div>
-<div class='sbar'><span class='sbar-l'>Market Conditions</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
-<div class='sbar'><span class='sbar-l'>News & Events</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
-</div></div>
-<div class='checks'><div class='cl-t'>Safety Checks</div>
-<div class='cli'><div class='cli-q'>Is the price too high right now?</div><div class='cli-a'>⚠️ Yes — price has jumped recently, be cautious</div></div>
-<div class='cli'><div class='cli-q'>Is the price trending upward?</div><div class='cli-a'>✅ Yes — price is moving up steadily</div></div>
-<div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>✅ Healthy — not at extreme highs or lows</div></div>
-</div>
-<div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$421.66 – $425.90</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$390.50</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$488.13</div><div class='lbox-sub'>Where it could go</div></div>
-</div>
-<div class='alloc-section' onclick='event.stopPropagation()'>
-<div class='alloc-title'>💵 How much do you want to invest?</div>
-<div class='alloc-row'>
-<input class='alloc-inp' id='alloc-inp-MSFT' type='number' min='0' placeholder='$0'
-  oninput='updateRR("MSFT",424.46,390.5,488.13)' />
-<span class='alloc-shares' id='shares-MSFT'></span>
-</div>
-<div class='rr-panel'>
-<div class='rr-title'>Your Risk &amp; Reward</div>
-<div class='rr-row'><span>💰 You could make (if it hits target)</span><span class='rr-gain' id='rr-gain-MSFT'>enter amount</span></div>
-<div class='rr-row'><span>🛑 You could lose (if it hits sell point)</span><span class='rr-loss' id='rr-loss-MSFT'>enter amount</span></div>
-<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-MSFT'>-</span></div>
-<div class='rr-explain' id='rr-explain-MSFT'></div>
-</div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("MSFT","BUY",81.6,424.46,390.5,488.13)'>💬 Ask AXIOM — should I put money in MSFT?</button>
-</div>
-<div class='sc-ai'>
-<div class='ai-badge'>🤖 AXIOM Coach says</div>
-<div class='ai-why'>This stock scored well on price momentum and company quality.</div>
-<div class='ai-watch'>⚠️ Watch for any big price drops — if it falls to the sell point, act quickly to protect yourself.</div>
-</div>
-</div></div>
-<div class='scard' id='card-GOOGL' onclick='toggleCard("card-GOOGL")'>
-<div class='sc-top'>
-<div class='sc-left'>
-<div class='sc-sym' style='color:#059669'>GOOGL</div>
-<div class='sc-name'>Alphabet</div>
-<div class='sc-sec'>Technology</div>
-</div>
-<div class='sc-right'>
-<div class='verdict' style='background:#F0FDF4;color:#059669;border-color:#059669'>BUY</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$349.94</div>
-<div class='sc-summary'>System says buy now</div>
-</div></div>
-<div class='sc-expand' id='expand-card-GOOGL'>▼ Tap to see full analysis</div>
-<div class='sc-body' id='body-card-GOOGL'>
-<div class='sc-price'>
-<div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$349.94</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+0.1% today</div>
-</div>
-<div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $147.84</span><span>97.2% of the way up</span><span>Yearly High $355.79</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(97.2% - 5px)'></div></div>
-</div>
-<div class='score-section'>
-<div class='score-badge' style='background:#F0FDF4;color:#059669'>STRONG BUY CANDIDATE</div>
-<div class='score-num'>Overall Score: <strong>80.6 / 100</strong></div>
-<div class='score-bars'>
-<div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:64%;background:#D97706'></div></div><span class='sbar-v'>64%</span></div>
-<div class='sbar'><span class='sbar-l'>Risk Level</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
 <div class='sbar'><span class='sbar-l'>Company Quality</span><div class='sbar-t'><div class='sbar-f' style='width:90%;background:#059669'></div></div><span class='sbar-v'>90%</span></div>
 <div class='sbar'><span class='sbar-l'>Market Conditions</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
 <div class='sbar'><span class='sbar-l'>News & Events</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
@@ -426,25 +426,25 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>⚠️ Near its highest price in a year — elevated risk</div></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$344.94 – $348.40</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$321.94</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$402.43</div><div class='lbox-sub'>Where it could go</div></div>
+<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$260.24 – $262.86</div><div class='lbox-sub'>Best price to buy</div></div>
+<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$239.11</div><div class='lbox-sub'>Protect yourself here</div></div>
+<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$298.88</div><div class='lbox-sub'>Where it could go</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-title'>💵 How much do you want to invest?</div>
 <div class='alloc-row'>
-<input class='alloc-inp' id='alloc-inp-GOOGL' type='number' min='0' placeholder='$0'
-  oninput='updateRR("GOOGL",349.94,321.94,402.43)' />
-<span class='alloc-shares' id='shares-GOOGL'></span>
+<input class='alloc-inp' id='alloc-inp-AMZN' type='number' min='0' placeholder='$0'
+  oninput='updateRR("AMZN",259.9,239.11,298.88)' />
+<span class='alloc-shares' id='shares-AMZN'></span>
 </div>
 <div class='rr-panel'>
 <div class='rr-title'>Your Risk &amp; Reward</div>
-<div class='rr-row'><span>💰 You could make (if it hits target)</span><span class='rr-gain' id='rr-gain-GOOGL'>enter amount</span></div>
-<div class='rr-row'><span>🛑 You could lose (if it hits sell point)</span><span class='rr-loss' id='rr-loss-GOOGL'>enter amount</span></div>
-<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-GOOGL'>-</span></div>
-<div class='rr-explain' id='rr-explain-GOOGL'></div>
+<div class='rr-row'><span>💰 You could make (if it hits target)</span><span class='rr-gain' id='rr-gain-AMZN'>enter amount</span></div>
+<div class='rr-row'><span>🛑 You could lose (if it hits sell point)</span><span class='rr-loss' id='rr-loss-AMZN'>enter amount</span></div>
+<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-AMZN'>-</span></div>
+<div class='rr-explain' id='rr-explain-AMZN'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("GOOGL","BUY",80.6,349.94,321.94,402.43)'>💬 Ask AXIOM — should I put money in GOOGL?</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("AMZN","HOLD",78.6,259.9,239.11,298.88)'>💬 Ask AXIOM — should I put money in AMZN?</button>
 </div>
 <div class='sc-ai'>
 <div class='ai-badge'>🤖 AXIOM Coach says</div>
@@ -461,19 +461,19 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 </div>
 <div class='sc-right'>
 <div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$154.67</div>
+<div style='font-size:20px;font-weight:800;margin:4px 0'>$154.47</div>
 <div class='sc-summary'>Watch — not buying yet</div>
 </div></div>
 <div class='sc-expand' id='expand-card-XOM'>▼ Tap to see full analysis</div>
 <div class='sc-body' id='body-card-XOM'>
 <div class='sc-price'>
 <div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$154.67</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+2.7% today</div>
+<div class='price-val'>$154.47</div>
+<div class='chg' style='background:#FFF1F2;color:#DC2626'>-0.1% today</div>
 </div>
 <div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $101.19</span><span>71.1% of the way up</span><span>Yearly High $176.41</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(71.1% - 5px)'></div></div>
+<div class='range-lbl'><span>Yearly Low $101.19</span><span>70.8% of the way up</span><span>Yearly High $176.41</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(70.8% - 5px)'></div></div>
 </div>
 <div class='score-section'>
 <div class='score-badge' style='background:#FFFBEB;color:#D97706'>DECENT PICK</div>
@@ -491,15 +491,15 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>✅ Healthy — not at extreme highs or lows</div></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$154.21 – $155.13</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$142.30</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$177.87</div><div class='lbox-sub'>Where it could go</div></div>
+<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$154.01 – $154.93</div><div class='lbox-sub'>Best price to buy</div></div>
+<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$142.11</div><div class='lbox-sub'>Protect yourself here</div></div>
+<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$177.64</div><div class='lbox-sub'>Where it could go</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-title'>💵 How much do you want to invest?</div>
 <div class='alloc-row'>
 <input class='alloc-inp' id='alloc-inp-XOM' type='number' min='0' placeholder='$0'
-  oninput='updateRR("XOM",154.67,142.3,177.87)' />
+  oninput='updateRR("XOM",154.47,142.11,177.64)' />
 <span class='alloc-shares' id='shares-XOM'></span>
 </div>
 <div class='rr-panel'>
@@ -509,7 +509,7 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-XOM'>-</span></div>
 <div class='rr-explain' id='rr-explain-XOM'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("XOM","HOLD",79.3,154.67,142.3,177.87)'>💬 Ask AXIOM — should I put money in XOM?</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("XOM","HOLD",79.3,154.47,142.11,177.64)'>💬 Ask AXIOM — should I put money in XOM?</button>
 </div>
 <div class='sc-ai'>
 <div class='ai-badge'>🤖 AXIOM Coach says</div>
@@ -526,19 +526,19 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 </div>
 <div class='sc-right'>
 <div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$60.76</div>
+<div style='font-size:20px;font-weight:800;margin:4px 0'>$60.04</div>
 <div class='sc-summary'>Watch — not buying yet</div>
 </div></div>
 <div class='sc-expand' id='expand-card-OXY'>▼ Tap to see full analysis</div>
 <div class='sc-body' id='body-card-OXY'>
 <div class='sc-price'>
 <div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$60.76</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+3.7% today</div>
+<div class='price-val'>$60.04</div>
+<div class='chg' style='background:#FFF1F2;color:#DC2626'>-1.2% today</div>
 </div>
 <div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $38.72</span><span>76.7% of the way up</span><span>Yearly High $67.45</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(76.7% - 5px)'></div></div>
+<div class='range-lbl'><span>Yearly Low $38.72</span><span>74.2% of the way up</span><span>Yearly High $67.45</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(74.2% - 5px)'></div></div>
 </div>
 <div class='score-section'>
 <div class='score-badge' style='background:#FFFBEB;color:#D97706'>DECENT PICK</div>
@@ -556,15 +556,15 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>✅ Healthy — not at extreme highs or lows</div></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$60.58 – $60.94</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$55.90</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$69.87</div><div class='lbox-sub'>Where it could go</div></div>
+<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$59.86 – $60.22</div><div class='lbox-sub'>Best price to buy</div></div>
+<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$55.24</div><div class='lbox-sub'>Protect yourself here</div></div>
+<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$69.05</div><div class='lbox-sub'>Where it could go</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-title'>💵 How much do you want to invest?</div>
 <div class='alloc-row'>
 <input class='alloc-inp' id='alloc-inp-OXY' type='number' min='0' placeholder='$0'
-  oninput='updateRR("OXY",60.76,55.9,69.87)' />
+  oninput='updateRR("OXY",60.04,55.24,69.05)' />
 <span class='alloc-shares' id='shares-OXY'></span>
 </div>
 <div class='rr-panel'>
@@ -574,7 +574,7 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-OXY'>-</span></div>
 <div class='rr-explain' id='rr-explain-OXY'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("OXY","HOLD",79.1,60.76,55.9,69.87)'>💬 Ask AXIOM — should I put money in OXY?</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("OXY","HOLD",79.1,60.04,55.24,69.05)'>💬 Ask AXIOM — should I put money in OXY?</button>
 </div>
 <div class='sc-ai'>
 <div class='ai-badge'>🤖 AXIOM Coach says</div>
@@ -591,19 +591,19 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 </div>
 <div class='sc-right'>
 <div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$192.22</div>
+<div style='font-size:20px;font-weight:800;margin:4px 0'>$192.73</div>
 <div class='sc-summary'>Watch — not buying yet</div>
 </div></div>
 <div class='sc-expand' id='expand-card-CVX'>▼ Tap to see full analysis</div>
 <div class='sc-body' id='body-card-CVX'>
 <div class='sc-price'>
 <div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$192.22</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+2.0% today</div>
+<div class='price-val'>$192.73</div>
+<div class='chg' style='background:#F0FDF4;color:#059669'>+0.3% today</div>
 </div>
 <div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $133.77</span><span>72.2% of the way up</span><span>Yearly High $214.71</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(72.2% - 5px)'></div></div>
+<div class='range-lbl'><span>Yearly Low $133.77</span><span>72.8% of the way up</span><span>Yearly High $214.71</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(72.8% - 5px)'></div></div>
 </div>
 <div class='score-section'>
 <div class='score-badge' style='background:#FFFBEB;color:#D97706'>DECENT PICK</div>
@@ -621,15 +621,15 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>✅ Healthy — not at extreme highs or lows</div></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$191.64 – $192.80</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$176.84</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$221.05</div><div class='lbox-sub'>Where it could go</div></div>
+<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$192.15 – $193.31</div><div class='lbox-sub'>Best price to buy</div></div>
+<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$177.31</div><div class='lbox-sub'>Protect yourself here</div></div>
+<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$221.64</div><div class='lbox-sub'>Where it could go</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-title'>💵 How much do you want to invest?</div>
 <div class='alloc-row'>
 <input class='alloc-inp' id='alloc-inp-CVX' type='number' min='0' placeholder='$0'
-  oninput='updateRR("CVX",192.22,176.84,221.05)' />
+  oninput='updateRR("CVX",192.73,177.31,221.64)' />
 <span class='alloc-shares' id='shares-CVX'></span>
 </div>
 <div class='rr-panel'>
@@ -639,7 +639,7 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-CVX'>-</span></div>
 <div class='rr-explain' id='rr-explain-CVX'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("CVX","HOLD",78.3,192.22,176.84,221.05)'>💬 Ask AXIOM — should I put money in CVX?</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("CVX","HOLD",78.3,192.73,177.31,221.64)'>💬 Ask AXIOM — should I put money in CVX?</button>
 </div>
 <div class='sc-ai'>
 <div class='ai-badge'>🤖 AXIOM Coach says</div>
@@ -656,19 +656,19 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 </div>
 <div class='sc-right'>
 <div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$55.70</div>
+<div style='font-size:20px;font-weight:800;margin:4px 0'>$56.35</div>
 <div class='sc-summary'>Watch — not buying yet</div>
 </div></div>
 <div class='sc-expand' id='expand-card-SLB'>▼ Tap to see full analysis</div>
 <div class='sc-body' id='body-card-SLB'>
 <div class='sc-price'>
 <div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$55.70</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+0.1% today</div>
+<div class='price-val'>$56.35</div>
+<div class='chg' style='background:#F0FDF4;color:#059669'>+1.2% today</div>
 </div>
 <div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $31.64</span><span>95.2% of the way up</span><span>Yearly High $56.90</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(95.2% - 5px)'></div></div>
+<div class='range-lbl'><span>Yearly Low $31.64</span><span>97.8% of the way up</span><span>Yearly High $56.90</span></div>
+<div class='range-track'><div class='range-pin' style='left:calc(97.8% - 5px)'></div></div>
 </div>
 <div class='score-section'>
 <div class='score-badge' style='background:#FFFBEB;color:#D97706'>DECENT PICK</div>
@@ -686,15 +686,15 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>⚠️ Near its highest price in a year — elevated risk</div></div>
 </div>
 <div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$55.22 – $55.77</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$51.24</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$64.05</div><div class='lbox-sub'>Where it could go</div></div>
+<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$55.53 – $56.08</div><div class='lbox-sub'>Best price to buy</div></div>
+<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$51.84</div><div class='lbox-sub'>Protect yourself here</div></div>
+<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$64.80</div><div class='lbox-sub'>Where it could go</div></div>
 </div>
 <div class='alloc-section' onclick='event.stopPropagation()'>
 <div class='alloc-title'>💵 How much do you want to invest?</div>
 <div class='alloc-row'>
 <input class='alloc-inp' id='alloc-inp-SLB' type='number' min='0' placeholder='$0'
-  oninput='updateRR("SLB",55.7,51.24,64.05)' />
+  oninput='updateRR("SLB",56.35,51.84,64.8)' />
 <span class='alloc-shares' id='shares-SLB'></span>
 </div>
 <div class='rr-panel'>
@@ -704,137 +704,7 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-SLB'>-</span></div>
 <div class='rr-explain' id='rr-explain-SLB'></div>
 </div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("SLB","HOLD",75.1,55.7,51.24,64.05)'>💬 Ask AXIOM — should I put money in SLB?</button>
-</div>
-<div class='sc-ai'>
-<div class='ai-badge'>🤖 AXIOM Coach says</div>
-<div class='ai-why'>This stock scored well on price momentum and company quality.</div>
-<div class='ai-watch'>⚠️ Watch for any big price drops — if it falls to the sell point, act quickly to protect yourself.</div>
-</div>
-</div></div>
-<div class='scard' id='card-CRWD' onclick='toggleCard("card-CRWD")'>
-<div class='sc-top'>
-<div class='sc-left'>
-<div class='sc-sym' style='color:#D97706'>CRWD</div>
-<div class='sc-name'>CrowdStrike</div>
-<div class='sc-sec'>Technology</div>
-</div>
-<div class='sc-right'>
-<div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$452.38</div>
-<div class='sc-summary'>Watch — not buying yet</div>
-</div></div>
-<div class='sc-expand' id='expand-card-CRWD'>▼ Tap to see full analysis</div>
-<div class='sc-body' id='body-card-CRWD'>
-<div class='sc-price'>
-<div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$452.38</div>
-<div class='chg' style='background:#FFF1F2;color:#DC2626'>-0.6% today</div>
-</div>
-<div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $342.72</span><span>48.9% of the way up</span><span>Yearly High $566.90</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(48.9% - 5px)'></div></div>
-</div>
-<div class='score-section'>
-<div class='score-badge' style='background:#FFFBEB;color:#D97706'>DECENT PICK</div>
-<div class='score-num'>Overall Score: <strong>76.1 / 100</strong></div>
-<div class='score-bars'>
-<div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:79%;background:#059669'></div></div><span class='sbar-v'>79%</span></div>
-<div class='sbar'><span class='sbar-l'>Risk Level</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
-<div class='sbar'><span class='sbar-l'>Company Quality</span><div class='sbar-t'><div class='sbar-f' style='width:67%;background:#D97706'></div></div><span class='sbar-v'>67%</span></div>
-<div class='sbar'><span class='sbar-l'>Market Conditions</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
-<div class='sbar'><span class='sbar-l'>News & Events</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
-</div></div>
-<div class='checks'><div class='cl-t'>Safety Checks</div>
-<div class='cli'><div class='cli-q'>Is the price too high right now?</div><div class='cli-a'>⚠️ Yes — price has jumped recently, be cautious</div></div>
-<div class='cli'><div class='cli-q'>Is the price trending upward?</div><div class='cli-a'>✅ Yes — price is moving up steadily</div></div>
-<div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>✅ Healthy — not at extreme highs or lows</div></div>
-</div>
-<div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$448.84 – $453.36</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$416.19</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$520.24</div><div class='lbox-sub'>Where it could go</div></div>
-</div>
-<div class='alloc-section' onclick='event.stopPropagation()'>
-<div class='alloc-title'>💵 How much do you want to invest?</div>
-<div class='alloc-row'>
-<input class='alloc-inp' id='alloc-inp-CRWD' type='number' min='0' placeholder='$0'
-  oninput='updateRR("CRWD",452.38,416.19,520.24)' />
-<span class='alloc-shares' id='shares-CRWD'></span>
-</div>
-<div class='rr-panel'>
-<div class='rr-title'>Your Risk &amp; Reward</div>
-<div class='rr-row'><span>💰 You could make (if it hits target)</span><span class='rr-gain' id='rr-gain-CRWD'>enter amount</span></div>
-<div class='rr-row'><span>🛑 You could lose (if it hits sell point)</span><span class='rr-loss' id='rr-loss-CRWD'>enter amount</span></div>
-<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-CRWD'>-</span></div>
-<div class='rr-explain' id='rr-explain-CRWD'></div>
-</div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("CRWD","HOLD",76.1,452.38,416.19,520.24)'>💬 Ask AXIOM — should I put money in CRWD?</button>
-</div>
-<div class='sc-ai'>
-<div class='ai-badge'>🤖 AXIOM Coach says</div>
-<div class='ai-why'>This stock scored well on price momentum and company quality.</div>
-<div class='ai-watch'>⚠️ Watch for any big price drops — if it falls to the sell point, act quickly to protect yourself.</div>
-</div>
-</div></div>
-<div class='scard' id='card-AMZN' onclick='toggleCard("card-AMZN")'>
-<div class='sc-top'>
-<div class='sc-left'>
-<div class='sc-sym' style='color:#D97706'>AMZN</div>
-<div class='sc-name'>Amazon</div>
-<div class='sc-sec'>Technology</div>
-</div>
-<div class='sc-right'>
-<div class='verdict' style='background:#FFFBEB;color:#D97706;border-color:#D97706'>HOLD</div>
-<div style='font-size:20px;font-weight:800;margin:4px 0'>$263.04</div>
-<div class='sc-summary'>Watch — not buying yet</div>
-</div></div>
-<div class='sc-expand' id='expand-card-AMZN'>▼ Tap to see full analysis</div>
-<div class='sc-body' id='body-card-AMZN'>
-<div class='sc-price'>
-<div style='display:flex;align-items:center;gap:10px;margin-bottom:10px'>
-<div class='price-val'>$263.04</div>
-<div class='chg' style='background:#F0FDF4;color:#059669'>+1.3% today</div>
-</div>
-<div class='yr-range-label'>Where it sits in its yearly range</div>
-<div class='range-lbl'><span>Yearly Low $183.85</span><span>96.5% of the way up</span><span>Yearly High $265.91</span></div>
-<div class='range-track'><div class='range-pin' style='left:calc(96.5% - 5px)'></div></div>
-</div>
-<div class='score-section'>
-<div class='score-badge' style='background:#FFFBEB;color:#D97706'>DECENT PICK</div>
-<div class='score-num'>Overall Score: <strong>75.4 / 100</strong></div>
-<div class='score-bars'>
-<div class='sbar'><span class='sbar-l'>Price Momentum</span><div class='sbar-t'><div class='sbar-f' style='width:65%;background:#D97706'></div></div><span class='sbar-v'>65%</span></div>
-<div class='sbar'><span class='sbar-l'>Risk Level</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
-<div class='sbar'><span class='sbar-l'>Company Quality</span><div class='sbar-t'><div class='sbar-f' style='width:90%;background:#059669'></div></div><span class='sbar-v'>90%</span></div>
-<div class='sbar'><span class='sbar-l'>Market Conditions</span><div class='sbar-t'><div class='sbar-f' style='width:100%;background:#059669'></div></div><span class='sbar-v'>100%</span></div>
-<div class='sbar'><span class='sbar-l'>News & Events</span><div class='sbar-t'><div class='sbar-f' style='width:70%;background:#D97706'></div></div><span class='sbar-v'>70%</span></div>
-</div></div>
-<div class='checks'><div class='cl-t'>Safety Checks</div>
-<div class='cli'><div class='cli-q'>Is the price too high right now?</div><div class='cli-a'>⚠️ Yes — price has jumped recently, be cautious</div></div>
-<div class='cli'><div class='cli-q'>Is the price trending upward?</div><div class='cli-a'>✅ Yes — price is moving up steadily</div></div>
-<div class='cli'><div class='cli-q'>How is it doing vs. the past year?</div><div class='cli-a'>⚠️ Near its highest price in a year — elevated risk</div></div>
-</div>
-<div class='levels'>
-<div class='lbox'><div class='lbox-l'>Good Entry Price</div><div class='lbox-v' style='color:#059669'>$259.28 – $261.89</div><div class='lbox-sub'>Best price to buy</div></div>
-<div class='lbox'><div class='lbox-l'>Sell If It Drops To</div><div class='lbox-v' style='color:#DC2626'>$242.00</div><div class='lbox-sub'>Protect yourself here</div></div>
-<div class='lbox'><div class='lbox-l'>Price Target</div><div class='lbox-v' style='color:#1D4ED8'>$302.50</div><div class='lbox-sub'>Where it could go</div></div>
-</div>
-<div class='alloc-section' onclick='event.stopPropagation()'>
-<div class='alloc-title'>💵 How much do you want to invest?</div>
-<div class='alloc-row'>
-<input class='alloc-inp' id='alloc-inp-AMZN' type='number' min='0' placeholder='$0'
-  oninput='updateRR("AMZN",263.04,242.0,302.5)' />
-<span class='alloc-shares' id='shares-AMZN'></span>
-</div>
-<div class='rr-panel'>
-<div class='rr-title'>Your Risk &amp; Reward</div>
-<div class='rr-row'><span>💰 You could make (if it hits target)</span><span class='rr-gain' id='rr-gain-AMZN'>enter amount</span></div>
-<div class='rr-row'><span>🛑 You could lose (if it hits sell point)</span><span class='rr-loss' id='rr-loss-AMZN'>enter amount</span></div>
-<div class='rr-row'><span>📊 For every $1 you risk, you could make</span><span class='rr-ratio' id='rr-ratio-AMZN'>-</span></div>
-<div class='rr-explain' id='rr-explain-AMZN'></div>
-</div>
-<button class='ask-axiom-btn' onclick='askAxiomAbout("AMZN","HOLD",75.4,263.04,242.0,302.5)'>💬 Ask AXIOM — should I put money in AMZN?</button>
+<button class='ask-axiom-btn' onclick='askAxiomAbout("SLB","HOLD",75.1,56.35,51.84,64.8)'>💬 Ask AXIOM — should I put money in SLB?</button>
 </div>
 <div class='sc-ai'>
 <div class='ai-badge'>🤖 AXIOM Coach says</div>
@@ -842,7 +712,7 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='ai-watch'>⚠️ Watch for any big price drops — if it falls to the sell point, act quickly to protect yourself.</div>
 </div>
 </div></div></div>
-<div class='footer'>INVESTOR 101 · AXIOM US · Auto-updated Thursday, April 30 2026 at 07:22 AM ET<br>For learning purposes only — not financial advice — all investing involves risk<br>Data: Finnhub / yfinance &nbsp;|&nbsp; AI Coach: Groq &nbsp;|&nbsp; Decisions: Rules-based model</div>
+<div class='footer'>INVESTOR 101 · AXIOM US · Auto-updated Thursday, April 30 2026 at 11:13 AM ET<br>For learning purposes only — not financial advice — all investing involves risk<br>Data: Finnhub / yfinance &nbsp;|&nbsp; AI Coach: Groq &nbsp;|&nbsp; Decisions: Rules-based model</div>
 </div>
 <button class='chat-btn' onclick='toggleChat()'>💬 Ask AXIOM</button>
 <div class='chat-box' id='chatBox'>
@@ -856,7 +726,7 @@ body{background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacS
 <div class='chat-inp'><input id='chatIn' type='text' placeholder='Ask anything...' onkeydown='if(event.key=="Enter")sendMsg()'/><button onclick='sendMsg()'>Send</button></div>
 </div>
 <script>
-const PORTFOLIO = [{"sym":"COP","verdict":"BUY","score":83.6,"price":128.25,"stop":117.99,"target":147.49},{"sym":"AAPL","verdict":"BUY","score":85.8,"price":270.17,"stop":248.56,"target":310.7},{"sym":"MSFT","verdict":"BUY","score":81.6,"price":424.46,"stop":390.5,"target":488.13},{"sym":"GOOGL","verdict":"BUY","score":80.6,"price":349.94,"stop":321.94,"target":402.43},{"sym":"XOM","verdict":"HOLD","score":79.3,"price":154.67,"stop":142.3,"target":177.87},{"sym":"OXY","verdict":"HOLD","score":79.1,"price":60.76,"stop":55.9,"target":69.87},{"sym":"CVX","verdict":"HOLD","score":78.3,"price":192.22,"stop":176.84,"target":221.05},{"sym":"SLB","verdict":"HOLD","score":75.1,"price":55.7,"stop":51.24,"target":64.05},{"sym":"CRWD","verdict":"HOLD","score":76.1,"price":452.38,"stop":416.19,"target":520.24},{"sym":"AMZN","verdict":"HOLD","score":75.4,"price":263.04,"stop":242.0,"target":302.5}];
+const PORTFOLIO = [{"sym":"NVDA","verdict":"BUY","score":83.8,"price":202.1,"stop":185.93,"target":232.41},{"sym":"COP","verdict":"BUY","score":86.8,"price":126.7,"stop":116.56,"target":145.7},{"sym":"CRWD","verdict":"HOLD","score":76.1,"price":445.97,"stop":410.29,"target":512.87},{"sym":"AMZN","verdict":"HOLD","score":78.6,"price":259.9,"stop":239.11,"target":298.88},{"sym":"XOM","verdict":"HOLD","score":79.3,"price":154.47,"stop":142.11,"target":177.64},{"sym":"OXY","verdict":"HOLD","score":79.1,"price":60.04,"stop":55.24,"target":69.05},{"sym":"CVX","verdict":"HOLD","score":78.3,"price":192.73,"stop":177.31,"target":221.64},{"sym":"SLB","verdict":"HOLD","score":75.1,"price":56.35,"stop":51.84,"target":64.8}];
 const BUDGET_DEFAULT = 500;
 const FEAR = 'GREED';
 
